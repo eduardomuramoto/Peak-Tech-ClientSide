@@ -12,17 +12,28 @@ class SignUp extends React.Component {
     }
   }
 
+  handleChange(event) {
+    const newState = Object.assign({}, this.state, {
+      [event.target.name]: event.target.value,
+    });
+    this.setState(newState);
+  }
+
+  handleSubmit(){
+    console.log('sign up');
+  }
+
   render() {
     return (
       <div className={this.props.signUpOpen ? "signup-open" : "signup-closed"}>
         <label>Name</label>
-        <input name="name" />
+        <input name="name" onChange={this.handleChange.bind(this)} value={this.state.name} />
 
         <label>Email</label>
-        <input name="email" />
+        <input name="email" onChange={this.handleChange.bind(this)} value={this.state.email}/>
 
         <label>Password</label>
-        <input name="password" />
+        <input name="password" onChange={this.handleChange.bind(this)} value={this.state.password}/>
       </div>
     )
   }
