@@ -18,21 +18,36 @@ class Footer extends React.Component {
 
   render() {
     return (
-      <div className="footer">
-        <nav>
-          <div className="footer-nav">
+      <div className="footer-nav">
+        <div className ="row site-info">
+          <div className="copyright-column">
             <a href="#" onClick={()=>this.openSignIn()}>Sign In</a>
             <a href="#" onClick={()=>this.openSignUp()}>Sign Up</a>
             <a href="#" onClick={()=>this.openAbout()}>About</a>
           </div>
-          <p>
-            Built and maintained by students from&nbsp;
-            <a href="https://codecore.ca/">
-              CodeCore
-            </a>
-          </p>
-        </nav>
+
+            <div className = "author-column">
+              Built and maintained by students from&nbsp;
+              <a href="https://codecore.ca/">
+                CodeCore
+              </a>
+            </div>
+        </div>
       </div>
+
+
+
+
+      // <div className="footer">
+      //   <nav>
+      //     <div className="footer-nav">
+      //       <a href="#" onClick={()=>this.openSignIn()}>Sign In</a>
+      //       <a href="#" onClick={()=>this.openSignUp()}>Sign Up</a>
+      //       <a href="#" onClick={()=>this.openAbout()}>About</a>
+      //     </div>
+      //
+      //   </nav>
+      // </div>
     )
   }
 };

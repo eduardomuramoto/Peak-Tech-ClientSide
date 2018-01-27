@@ -1,3 +1,93 @@
+#navigation{
+  background-color: rgba(255,255,255,0);
+  border-style: solid;
+  border-bottom: none;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+  border-width: thin;
+  margin: 0;
+  padding-left: 10px;
+  padding-right: 0;
+  min-height: 80px;
+  /*background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.00));*/
+  background: linear-gradient(rgba(100,120,190,0.8), rgba(100,120, 190,-0.5));
+}
+nav{
+  padding: 0;
+}
+
+.navbar-dark{
+  border-color: rgba(25,150,170,1);
+  color: rgba(25,150,170,1);
+}
+
+.navbar-toggler{
+  border-color: rgba(25,150,170,1);
+  padding-right: 4px;
+  padding-left:4px;
+}
+
+
+
+.navbar-brand{
+  font-size: 0.9em;
+  font-weight: lighter;
+}
+
+
+.navbar-nav{
+  /*text-align: center;*/
+  margin-left: auto;
+  padding: 0;
+  font-size: 0.8em
+}
+
+.navbar-toggler{
+  border-radius: 0;
+  color: rgba(25,150,170,1);
+  margin-right: 10px;
+  font-weight: lighter;
+}
+
+.nav-link{
+  font-family: 'Aldrich', sans-serif;
+  /*font-family: 'Baloo', cursive;*/
+  font-weight: 50;
+  color: rgba(25,150,170,1);
+}
+
+.navbar-expand{
+  padding: 0;
+}
+
+
+.nav-item{
+  border-style: solid;
+  border-width: thin;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-left-color: rgba(127,127,127,0.5);
+  border-top: 0;
+  border-bottom: 0;
+  border-right: 0;
+
+}
+
+#navbarNavDropdown>ul>li{
+  text-align: center;
+}
+
+#header{
+  color: rgba(25,150,170,1);
+  font-family: 'Aldrich', sans-serif;
+  font-size: 0.9em;
+  /*font-family: 'Squada One', cursive;*/
+}
+
+
+  /*navigation end*/
+
 .directory-open {
 
 }
@@ -45,3 +135,46 @@
 .about-closed {
   display: none;
 }
+
+
+
+.indeximage{
+  height: 100px;
+  width: 100%;
+}
+
+
+// ****** Start of footer *****
+
+.site-info{
+  display:block;
+  background-color: rgba(150,150,150,1);
+  background-color: rgba(25,150,170,0.7);
+  height: 30px;
+  padding-top: 10px;
+}
+
+.copyright-column, .author-column{
+  color: rgba(255,255,255,1);
+  font-family: helvetica;
+  font-weight: lighter;
+  font-size: 0.8em;
+
+}
+
+.copyright-column{
+  float: left;
+  padding-left: 10px;
+}
+
+.author-column{
+  float: right;
+  padding-right: 10px;
+}
+
+.author{
+  text-align: right;
+}
+
+
+// ***** End of Footer *****
