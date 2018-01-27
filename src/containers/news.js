@@ -25,7 +25,6 @@ class News extends React.Component {
               <p>Tech millionaire steps in to save historic Friedman House... It's
                 a rare event when a historically important house on Vancouver's west side is...
               </p>
-
             </div>
           </div>
           <hr/>
