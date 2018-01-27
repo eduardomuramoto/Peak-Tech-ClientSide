@@ -19,10 +19,10 @@ class App extends Component {
         <Directory />
         <Events />
         <News />
-        <Footer />
         <About />
         <SignIn />
         <SignUp />
+        <Footer />
       </div>
     )
   }

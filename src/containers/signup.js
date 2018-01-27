@@ -15,14 +15,33 @@ class SignUp extends React.Component {
   render() {
     return (
       <div className={this.props.signUpOpen ? "signup-open" : "signup-closed"}>
-        <label>Name</label>
-        <input name="name" />
+        <form>
+          <p className="contact-header">SIGN UP</p>
+          <hr className="rule"/>
+          <div className="form-group row">
+            <div className="col-sm-12">
+              <input type="text" className="form-control" id="input_first_name"  placeholder="NAME"/>
+            </div>
+          </div>
 
-        <label>Email</label>
-        <input name="email" />
+          <div className="form-group row">
+            <div className="col-sm-12">
+              <input type="text" id="input_email" className="form-control" placeholder="E-MAIL"/>
+            </div>
+          </div>
 
-        <label>Password</label>
-        <input name="password" />
+          <div className="form-group row">
+            <div className="col-sm-12">
+              <input type="text" className="form-control" id="input_last_name" placeholder="PASSWORD"/>
+            </div>
+          </div>
+
+          <div className="form-group row">
+            <div className="col-sm-12 button-column">
+              <button type="button" id="form-submit">SUBMIT</button>
+            </div>
+          </div>
+          </form>
       </div>
     )
   }
