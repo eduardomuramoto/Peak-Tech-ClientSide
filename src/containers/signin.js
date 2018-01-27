@@ -25,13 +25,28 @@ class SignIn extends React.Component {
   render() {
     return (
       <div className={this.props.signInOpen ? "signin-open" : "signin-closed"}>
-        <label>Email</label>
-        <input name="email" onChange={this.handleChange.bind(this)} value={this.state.email} />
+        <form>
+          <p className="contact-header">SIGN IN</p>
+          <hr className="rule"/>
 
-        <label>Password</label>
-        <input name="password" onChange={this.handleChange.bind(this)} value={this.state.password} />
+          <div className="form-group row">
+            <div className="col-sm-12">
+              <input type="text" id="input_email" name="email" className="form-control" placeholder="E-MAIL" onChange={this.handleChange.bind(this)} value={this.state.email}/>
+            </div>
+          </div>
 
-        <button className="btn btn-dark" onClick={()=>this.handleSubmit()}>Sign In</button>
+          <div className="form-group row">
+            <div className="col-sm-12">
+              <input type="text" className="form-control" name="password" id="input_last_name" onChange={this.handleChange.bind(this)} value={this.state.password} placeholder="PASSWORD"/>
+            </div>
+          </div>
+
+          <div className="form-group row">
+            <div className="col-sm-12 button-column">
+              <button type="button" id="form-submit">SUBMIT</button>
+            </div>
+          </div>
+          </form>
       </div>
     )
   }

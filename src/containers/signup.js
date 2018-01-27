@@ -26,14 +26,35 @@ class SignUp extends React.Component {
   render() {
     return (
       <div className={this.props.signUpOpen ? "signup-open" : "signup-closed"}>
-        <label>Name</label>
-        <input name="name" onChange={this.handleChange.bind(this)} value={this.state.name} />
 
-        <label>Email</label>
-        <input name="email" onChange={this.handleChange.bind(this)} value={this.state.email}/>
+        <form>
+          <p className="contact-header">SIGN UP</p>
+          <hr className="rule"/>
+          <div className="form-group row">
+            <div className="col-sm-12">
+              <input type="text" className="form-control" id="input_first_name" name="name" onChange={this.handleChange.bind(this)} value={this.state.name}  placeholder="NAME"/>
+            </div>
+          </div>
 
-        <label>Password</label>
-        <input name="password" onChange={this.handleChange.bind(this)} value={this.state.password}/>
+          <div className="form-group row">
+            <div className="col-sm-12">
+              <input type="text" id="input_email" className="form-control"  name="email" onChange={this.handleChange.bind(this)} value={this.state.email} placeholder="E-MAIL"/>
+            </div>
+          </div>
+
+          <div className="form-group row">
+            <div className="col-sm-12">
+              <input type="text" className="form-control" id="input_last_name" name="password" onChange={this.handleChange.bind(this)} value={this.state.password} placeholder="PASSWORD"/>
+            </div>
+          </div>
+
+          <div className="form-group row">
+            <div className="col-sm-12 button-column">
+              <button type="button" id="form-submit">SUBMIT</button>
+            </div>
+          </div>
+          </form>
+
       </div>
     )
   }
