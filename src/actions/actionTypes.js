@@ -1,3 +1,5 @@
 export default {
-
+  OPEN_DIRECTORY: "OPEN_DIRECTORY",
+  OPEN_EVENTS: "OPEN_EVENTS",
+  OPEN_NEWS: "OPEN_NEWS"
 }

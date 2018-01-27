@@ -5,16 +5,17 @@ import Directory from '../containers/directory.js';
 import UserNavBar from '../containers/usernavbar';
 import Events from '../containers/events.js';
 import Footer from '../containers/footer.js';
+import News from '../containers/news.js';
 
 
 class App extends Component {
-
   render() {
     return (
       <div>
         <UserNavBar />
         <Directory />
         <Events />
+        <News />
         <Footer />
       </div>
     )
@@ -23,7 +24,9 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-
+    directoryOpen: state.directoryOpen,
+    eventsOpen: state.eventsOpen,
+    newsOpen: state.newsOpen
   }
 };
 

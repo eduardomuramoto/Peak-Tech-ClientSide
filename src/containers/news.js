@@ -2,12 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import actions from '../actions/index';
 
-class Events extends React.Component {
+class News extends React.Component {
 
   render() {
     return (
-      <div className={this.props.eventsOpen ? "events-open" : "events-closed"}>
-        <h1>Events</h1>
+      <div className={this.props.newsOpen ? "news-open" : "news-closed"}>
+        <h1>News</h1>
       </div>
     )
   }
@@ -15,7 +15,7 @@ class Events extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    eventsOpen: state.eventsOpen
+    newsOpen: state.newsOpen
   }
 };
 
@@ -25,4 +25,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Events);
+export default connect(mapStateToProps, mapDispatchToProps)(News);

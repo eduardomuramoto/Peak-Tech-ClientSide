@@ -1,4 +1,3 @@
-
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import actions from '../actions/index';
@@ -6,7 +5,7 @@ import actions from '../actions/index';
 class Directory extends React.Component {
   render() {
     return (
-      <div>
+      <div className={this.props.directoryOpen ? "directory-open" : "directory-closed"}>
         <h1>Directory</h1>
       </div>
     )
@@ -15,7 +14,7 @@ class Directory extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-
+    directoryOpen: state.directoryOpen
   }
 };
 
