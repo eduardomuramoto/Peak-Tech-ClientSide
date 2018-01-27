@@ -19,7 +19,7 @@ class Footer extends React.Component {
   render() {
     return (
       <div>
-      <nav className="footer-nav navbar-expand-md fixed-bottom" id="navigation">
+      <nav className="site-info footer-nav navbar-expand-md fixed-bottom" id="navigation">
         <ul className="navbar-nav">
 
           <li className="nav-item">
