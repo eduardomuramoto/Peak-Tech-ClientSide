@@ -11,6 +11,17 @@ class SignIn extends React.Component {
     }
   }
 
+  handleChange(event) {
+    const newState = Object.assign({}, this.state, {
+      [event.target.name]: event.target.value,
+    });
+    this.setState(newState);
+  }
+
+  handleSubmit(){
+    console.log('sign in');
+  }
+
   render() {
     return (
       <div className={this.props.signInOpen ? "signin-open" : "signin-closed"}>
@@ -20,13 +31,13 @@ class SignIn extends React.Component {
 
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" id="input_email" className="form-control" placeholder="E-MAIL"/>
+              <input type="text" id="input_email" name="email" className="form-control" placeholder="E-MAIL" onChange={this.handleChange.bind(this)} value={this.state.email}/>
             </div>
           </div>
 
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" className="form-control" id="input_last_name" placeholder="PASSWORD"/>
+              <input type="text" className="form-control" name="password" id="input_last_name" onChange={this.handleChange.bind(this)} value={this.state.password} placeholder="PASSWORD"/>
             </div>
           </div>
 
