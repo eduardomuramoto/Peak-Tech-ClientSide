@@ -6,6 +6,9 @@ import UserNavBar from '../containers/usernavbar';
 import Events from '../containers/events.js';
 import Footer from '../containers/footer.js';
 import News from '../containers/news.js';
+import About from '../containers/about.js';
+import SignIn from '../containers/signin.js';
+import SignUp from '../containers/signup.js';
 
 
 class App extends Component {
@@ -17,6 +20,9 @@ class App extends Component {
         <Events />
         <News />
         <Footer />
+        <About />
+        <SignIn />
+        <SignUp />
       </div>
     )
   }
