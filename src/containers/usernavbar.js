@@ -7,9 +7,9 @@ class UserNavBar extends Component {
     return (
       <div>
         <nav>
-          <a>Directory</a>
-          <a>Events</a>
-          <a>News</a>
+          <button className="btn btn-dark"> Directory </button>
+          <button className="btn btn-dark"> Events </button>
+          <button className="btn btn-dark"> News </button>
         </nav>
       </div>
     )
