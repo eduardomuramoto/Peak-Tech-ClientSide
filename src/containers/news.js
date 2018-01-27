@@ -20,7 +20,7 @@ class News extends React.Component {
             <div className="col-md-2" style ={style}>
             </div>
             <div className="col-md-10">
-              <h3>Tech Millionaire steps in to save historic Friedman house</h3>
+              <p>Tech Millionaire steps in to save historic Friedman house</p>
               <p>7 hours ago - source: The Globe and Mail</p>
               <p>Tech millionaire steps in to save historic Friedman House... It's
                 a rare event when a historically important house on Vancouver's west side is...
