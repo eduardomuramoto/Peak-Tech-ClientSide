@@ -5,6 +5,7 @@ import Directory from '../containers/directory.js';
 import UserNavBar from '../containers/usernavbar';
 import Events from '../containers/events.js';
 import Footer from '../containers/footer.js';
+import EventCalendar from '../containers/eventcalendar.js';
 
 
 class App extends Component {
@@ -14,6 +15,7 @@ class App extends Component {
       <div>
         <UserNavBar />
         <Directory />
+        <EventCalendar />
         <Events />
         <Footer />
       </div>
