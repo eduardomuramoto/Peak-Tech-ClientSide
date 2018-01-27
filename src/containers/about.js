@@ -2,11 +2,12 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import actions from '../actions/index';
 
-class Directory extends React.Component {
+class About extends React.Component {
+
   render() {
     return (
-      <div className={this.props.directoryOpen ? "directory-open" : "directory-closed"}>
-        <h1>Directory</h1>
+      <div className={this.props.aboutOpen ? "about-open" : "about-closed"}>
+        <h3> Eduardo, Anna, Ray, Gloria, Shaggy, Paul </h3>
       </div>
     )
   }
@@ -14,7 +15,7 @@ class Directory extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    directoryOpen: state.directoryOpen
+    aboutOpen: state.aboutOpen
   }
 };
 
@@ -24,5 +25,4 @@ const mapDispatchToProps = (state) => {
   }
 };
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(Directory);
+export default connect(mapStateToProps, mapDispatchToProps)(About);
