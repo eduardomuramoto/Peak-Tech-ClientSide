@@ -11,7 +11,7 @@ const initialState = {
   adminSearchTermsOpen: false,
   registrationOpen: false,
   adminTechStacksOpen: false,
-  admin: false,
+  admin: true,
   adminEventsOpen: false,
   adminNewsOpen: false,
   adminUsersOpen: false,

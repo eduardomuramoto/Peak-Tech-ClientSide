@@ -61,23 +61,23 @@ class UserNavBar extends Component {
           </button>
           <div id="dropshow" className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav">
-              <li className="nav-item active">
-                Admin Panel:
+              <li className="nav-item nav-admin">
+                ADMIN PANEL:
               </li>
               <li className="nav-item active">
-                <a className="nav-link" href="#" >Organizations <span className="sr-only"></span></a>
+                <a className="nav-link" href="#" >ORAGANIZATIONS<span className="sr-only"></span></a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#" onClick={()=>this.openAdminEvents()}>Events</a>
+                <a className="nav-link" href="#" onClick={()=>this.openAdminEvents()}>EVENTS</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#" onClick={()=>this.openAdminNews()}>News</a>
+                <a className="nav-link" href="#" onClick={()=>this.openAdminNews()}>NEWS</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#" onClick={()=>this.openAdminUsers()} >Users</a>
+                <a className="nav-link" href="#" onClick={()=>this.openAdminUsers()} >USERS</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#" onClick={()=>this.openAdminTechnologies()}>Technologies</a>
+                <a className="nav-link" href="#" onClick={()=>this.openAdminTechnologies()}>TECHNOLOGIES</a>
               </li>
             </ul>
           </div>
