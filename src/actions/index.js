@@ -18,6 +18,9 @@ const actions = {
   },
   openAbout: () => {
     return { type: actionTypes.OPEN_ABOUT, payload: undefined}
+  },
+  openRegistration: () => {
+    return { type: actionTypes.OPEN_REGISTRATION, payload: undefined}
   }
 };
 

@@ -16,6 +16,10 @@ class Footer extends React.Component {
     this.props.openAboutAction();
   }
 
+  openRegistration(){
+    this.props.openRegistrationAction();
+  }
+
   render() {
     return (
 
@@ -26,6 +30,7 @@ class Footer extends React.Component {
           <a href="#" onClick={()=>this.openSignIn()}>Sign In</a>
           <a href="#" onClick={()=>this.openSignUp()}>Sign Up</a>
           <a href="#" onClick={()=>this.openAbout()}>About</a>
+        <a href="#" onClick={()=>this.openRegistration()}>Create Organization</a>
         </div>
 
           <div className="author-column">
@@ -42,7 +47,6 @@ class Footer extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-
   }
 };
 
@@ -50,7 +54,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     openSignInAction: () => { dispatch(actions.openSignIn())},
     openSignUpAction: () => { dispatch(actions.openSignUp())},
-    openAboutAction: () => { dispatch(actions.openAbout())}
+    openAboutAction: () => { dispatch(actions.openAbout())},
+    openRegistrationAction: () => { dispatch(actions.openRegistration())},
   }
 }
 
