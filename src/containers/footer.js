@@ -21,6 +21,11 @@ class Footer extends React.Component {
     this.props.openRegistrationAction();
   }
 
+  SignOut(){
+    localStorage.removeItem('jwt');
+    this.props.createTokenAction(false)
+  }
+
   render() {
     return (
 
@@ -30,6 +35,7 @@ class Footer extends React.Component {
         <div className="copyright-column">
           <a href="#" onClick={()=>this.openSignIn()}>SIGN IN</a>
           <a href="#" onClick={()=>this.openSignUp()}>SIGN UP</a>
+          <a href="#" onClick={()=>this.SignOut()}>SIGN OUT</a>
           <a href="#" onClick={()=>this.openAbout()}>ABOUT</a>
           <a href="#" onClick={()=>this.openRegistration()}>CREATE ORGANIZATION</a>
         </div>
