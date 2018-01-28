@@ -38,25 +38,25 @@ class SignUp extends React.Component {
           <hr className="rule"/>
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" className="form-control" id="input_first_name" name="first_name" onChange={this.handleChange.bind(this)} value={this.state.first_name}  placeholder="FIRST NAME"/>
+              <input type="text" className="form-control" id="input_first_name" name="first_name" onInput={this.handleChange.bind(this)} value={this.state.first_name}  placeholder="FIRST NAME"/>
             </div>
           </div>
 
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" className="form-control" id="input_last_name" name="last_name" onChange={this.handleChange.bind(this)} value={this.state.last_name}  placeholder="LAST NAME"/>
+              <input type="text" className="form-control" id="input_last_name" name="last_name" onInput={this.handleChange.bind(this)} value={this.state.last_name}  placeholder="LAST NAME"/>
             </div>
           </div>
 
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" id="input_email" className="form-control"  name="email" onChange={this.handleChange.bind(this)} value={this.state.email} placeholder="E-MAIL"/>
+              <input type="text" id="input_email" className="form-control"  name="email" onInput={this.handleChange.bind(this)} value={this.state.email} placeholder="E-MAIL"/>
             </div>
           </div>
 
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" className="form-control" id="input_last_name" name="password" onChange={this.handleChange.bind(this)} value={this.state.password} placeholder="PASSWORD"/>
+              <input type="text" className="form-control" id="input_last_name" name="password" onInput={this.handleChange.bind(this)} value={this.state.password} placeholder="PASSWORD"/>
             </div>
           </div>
 

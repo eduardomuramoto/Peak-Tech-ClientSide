@@ -31,13 +31,13 @@ class SignIn extends React.Component {
 
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" id="input_email" name="email" className="form-control" placeholder="E-MAIL" onChange={this.handleChange.bind(this)} value={this.state.email}/>
+              <input type="text" id="input_email" name="email" className="form-control" placeholder="E-MAIL" onInput={this.handleChange.bind(this)} value={this.state.email}/>
             </div>
           </div>
 
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" className="form-control" name="password" id="input_last_name" onChange={this.handleChange.bind(this)} value={this.state.password} placeholder="PASSWORD"/>
+              <input type="text" className="form-control" name="password" id="input_last_name" onInput={this.handleChange.bind(this)} value={this.state.password} placeholder="PASSWORD"/>
             </div>
           </div>
 
