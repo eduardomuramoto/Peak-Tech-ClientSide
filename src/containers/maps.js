@@ -3,35 +3,63 @@ import {connect} from 'react-redux';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
 class MapContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showingInfoWindow: false,
+      activeMarker: {},
+      selectedPlace: {},
+    }
+
+    // binding this to event-handler functions
+    this.onMarkerClick = this.onMarkerClick.bind(this);
+  }
+
+  onMarkerClick(props, marker, e) {
+    this.setState({
+      selectedPlace: props,
+      activeMarker: marker,
+      showingInfoWindow: true
+    });
+  }
+
   render() {
     return (
+      <div className="MapContainer">
+      <Map
+        style={{height: '30vw'}}
+        google={this.props.google}
+        initialCenter={{
+            lat: 49.2819605, lng: -123.1086604
+          }}
+        zoom={14}
+        >
 
-    <article>
-      <div className="MapContainer container">
-        <div className="row">
-          <div className="col-md-12">
-          <Map
-            style={{height: '30vw'}}
-            google={this.props.google}
-            initialCenter={{
-                lat: 49.2819605, lng: -123.1086604
-              }}
-            zoom={14}
-            >
-            {/* <Marker /> */}
-            <Marker
-              name={'Code Core'}
-              position={{lat: 49.2819605, lng: -123.1086604}} />
-            <Marker
-              name={'Code Core'}
-              position={{lat: 49.26382, lng: -123.104321}} />
-            </Map>
-          </div>
-        </div>
+        {/* <Marker /> */}
+        <Marker
+          onClick={this.onMarkerClick}
+          name={'Code Core'}
+          position={{lat: 49.2819605, lng: -123.1086604}} />
+        <Marker
+          onClick={this.onMarkerClick}
+          name={'NOT Code Core'}
+          position={{lat: 49.2829300, lng: -123.1046604}} />
+        <Marker
+          onClick={this.onMarkerClick}
+          name={'NOT Code Core 2'}
+          position={{lat: 49.2529300, lng: -123.1056604}} />
 
-      </div>
+          <InfoWindow
+          marker={this.state.activeMarker}
+          visible={this.state.showingInfoWindow}>
+            <div className= "InfoWindow">
+              <p1>{this.state.selectedPlace.name}</p1>
+            </div>
+        </InfoWindow>
 
-      <div className="container">
+        </Map>
+      
+            <div className="container">
           <form className="searchbar">
             <div className="form-group row">
               <div className="col-md-12 col-lg-12 col-sm-12 col-xs-12">
@@ -39,6 +67,8 @@ class MapContainer extends Component {
               </div>
             </div>
           </form>
+
+      </div>
       </div>
 
 
