@@ -27,7 +27,7 @@ class MapContainer extends Component {
     return (
       <div className="MapContainer">
       <Map
-        style={{height: '30vw'}}
+        style={{height: '50vh'}}
         google={this.props.google}
         initialCenter={{
             lat: 49.2819605, lng: -123.1086604
@@ -70,9 +70,6 @@ class MapContainer extends Component {
 
       </div>
       </div>
-
-
-
 
       );
     }

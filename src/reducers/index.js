@@ -7,9 +7,11 @@ const initialState = {
   signInOpen: false,
   signUpOpen: false,
   aboutOpen: false,
+  loggedIn: false,
   adminSearchTermsOpen: false,
   registrationOpen: false,
-  adminTechStacksOpen: true
+  adminTechStacksOpen: false,
+  admin: false
 }
 
 export default function formStore(state = initialState, action) {
@@ -34,6 +36,9 @@ export default function formStore(state = initialState, action) {
     }
     case actionTypes.OPEN_REGISTRATION: {
       return Object.assign({}, state, { newsOpen: false, directoryOpen: false, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: true });
+    }
+    case actionTypes.CREATE_TOKEN: {
+      return Object.assign({}, state, { admin: action.payload, newsOpen: false, directoryOpen: true, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false, loggedIn: true });
     }
     default:
       return state;

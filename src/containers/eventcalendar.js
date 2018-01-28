@@ -15,9 +15,12 @@ console.log(events);
 class EventCalendar extends React.Component {
   render() {
     return (
-      <div>
+      <div className="container">
         <BigCalendar
-          style={{height: '420px'}}
+          style={{
+            height: '420px',
+            minWidth:"600px"
+          }}
           views ={['month']}
           events={events}
         />
