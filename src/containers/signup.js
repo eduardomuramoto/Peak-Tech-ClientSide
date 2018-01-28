@@ -24,7 +24,9 @@ class SignUp extends React.Component {
   handleSubmit(){
     User
       .create({user: this.state})
-      console.log({user: this.state})
+      .then(data => {
+        console.log(data)
+      })
   }
 
   render() {
