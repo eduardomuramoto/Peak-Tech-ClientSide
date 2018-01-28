@@ -65,7 +65,7 @@ class SignIn extends React.Component {
 
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" className="form-control" name="password" id="input_last_name" onInput={this.handleChange.bind(this)} value={this.state.password} placeholder="PASSWORD"/>
+              <input type="password" className="form-control" name="password" id="input_last_name" onInput={this.handleChange.bind(this)} value={this.state.password} placeholder="PASSWORD"/>
             </div>
           </div>
 
