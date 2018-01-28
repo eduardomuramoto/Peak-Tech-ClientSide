@@ -45,6 +45,9 @@ const actions = {
   },
   signOut: () => {
     return { type: actionTypes.SIGN_OUT, payload: undefined}
+  },
+  signUp: () => {
+    return { type: actionTypes.SIGN_OUT, payload: undefined}
   }
 };
 

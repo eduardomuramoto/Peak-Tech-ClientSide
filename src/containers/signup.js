@@ -21,12 +21,13 @@ class SignUp extends React.Component {
     this.setState(newState);
   }
 
-  handleSubmit(){
+  signUp(){
     User
       .create({user: this.state})
       .then(data => {
         console.log(data)
       })
+      this.props.signUpAction();
   }
 
   render() {
@@ -62,7 +63,7 @@ class SignUp extends React.Component {
 
           <div className="form-group row">
             <div className="col-sm-12 button-column">
-              <button type="button" id="form-submit" onClick={()=>this.handleSubmit()}>SUBMIT</button>
+              <button type="button" id="form-submit" onClick={()=>this.signUp()}>SUBMIT</button>
             </div>
           </div>
           </form>
@@ -80,7 +81,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (state) => {
   return {
-
+    signUpAction: () => { dispatch(actions.signUp())}
   }
 };
 
