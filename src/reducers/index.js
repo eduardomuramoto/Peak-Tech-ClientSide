@@ -7,6 +7,7 @@ const initialState = {
   signInOpen: false,
   signUpOpen: false,
   aboutOpen: false,
+  adminSearchTermsOpen: false,
   registrationOpen: false
 }
 
