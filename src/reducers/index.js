@@ -10,6 +10,7 @@ const initialState = {
   loggedIn: false,
   adminSearchTermsOpen: false,
   registrationOpen: false,
+  adminTechStacksOpen: false,
   admin: false
 }
 
