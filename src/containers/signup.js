@@ -1,14 +1,16 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import actions from '../actions/index';
+import {User} from '../requests/users.js';
 
 class SignUp extends React.Component {
   constructor(){
     super();
     this.state = {
-      name: "",
-      email: "",
-      password: ""
+        first_name: "",
+        last_name: "",
+        email: "",
+        password: ""
     }
   }
 
@@ -20,7 +22,8 @@ class SignUp extends React.Component {
   }
 
   handleSubmit(){
-    console.log('sign up');
+    User
+      .create({user: this.state})
   }
 
   render() {
@@ -32,7 +35,13 @@ class SignUp extends React.Component {
           <hr className="rule"/>
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" className="form-control" id="input_first_name" name="name" onChange={this.handleChange.bind(this)} value={this.state.name}  placeholder="NAME"/>
+              <input type="text" className="form-control" id="input_first_name" name="first_name" onChange={this.handleChange.bind(this)} value={this.state.first_name}  placeholder="FIRST NAME"/>
+            </div>
+          </div>
+
+          <div className="form-group row">
+            <div className="col-sm-12">
+              <input type="text" className="form-control" id="input_last_name" name="last_name" onChange={this.handleChange.bind(this)} value={this.state.last_name}  placeholder="LAST NAME"/>
             </div>
           </div>
 
@@ -50,7 +59,7 @@ class SignUp extends React.Component {
 
           <div className="form-group row">
             <div className="col-sm-12 button-column">
-              <button type="button" id="form-submit">SUBMIT</button>
+              <button type="button" id="form-submit" onClick={()=>this.handleSubmit()}>SUBMIT</button>
             </div>
           </div>
           </form>

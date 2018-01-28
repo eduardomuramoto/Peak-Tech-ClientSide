@@ -34,7 +34,6 @@ export const User = {
       {
         method: 'POST',
         headers: {
-          'Authorization': getJwt(),
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(params)
