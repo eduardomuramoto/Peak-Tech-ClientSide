@@ -1,7 +1,7 @@
 import actionTypes from "../actions/actionTypes";
 
 const initialState = {
-  directoryOpen: true,
+  directoryOpen: false,
   eventsOpen: false,
   newsOpen: false,
   signInOpen: false,
@@ -11,11 +11,11 @@ const initialState = {
   adminSearchTermsOpen: false,
   registrationOpen: false,
   adminTechStacksOpen: false,
-  admin: false,
+  admin: true,
   adminEventsOpen: false,
   adminNewsOpen: false,
   adminUsersOpen: false,
-  adminTechnologiesOpen: false
+  adminTechnologiesOpen: true
 }
 
 export default function formStore(state = initialState, action) {
