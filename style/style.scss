@@ -127,6 +127,36 @@
 .events-open {
   margin-top: 12vh;
   height: 85vh;
+  //
+
+
+  .rbc-toolbar{
+    color: rgba(255,255,255,1);
+    background-color: rgba(25,150,170,0.5);
+    border-style: solid;
+    border-width: thin;
+    border-color: rgba(255,255,255,1);
+    border-radius: 0px;
+    border-top: none;
+    border-left: none;
+  }
+
+.rbc-btn-group>button{
+  color: rgba(255,255,255,1);
+  border-style: solid;
+  border-width: thin;
+  border-color: rgba(255,255,255,1);
+  border-radius: 0px;
+  border-top: none;
+  border-left: none;
+  border-bottom-color: rgba(25,150,170,0.3);
+}
+
+.rbc-header, .rbc-row-content{
+  color: rgba(25,150,170,1);
+}
+
+
 }
 
 .events-closed {
