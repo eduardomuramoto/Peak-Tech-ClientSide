@@ -1,7 +1,7 @@
 import {BASE_URL} from './config_request';
 
 function  getJwt() {
-  return `JWT ${localStorage.getItem('jwt')}`
+  return `JWT ${localStorage.getItem('jwt')}`;
 }
 // HTTP REQUESTS
 
