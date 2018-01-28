@@ -21,17 +21,23 @@ class AdminTechStacks extends React.Component {
     TechStack
       .all()
       .then (res => (
-        this.setState({allTechStacks: res})
+        this.setState({
+          newTechStack: {
+            name: ""
+          },
+          allTechStacks: res
+        })
       ))
   }
 
   handleSubmit(newTechInfo){
+    const newStack = this.state.allTechStacks.slice(0);
     TechStack
       .create(newTechInfo)
-      const {topStack} = this.state
-      this.setState({
-        allTechStacks: [...topStack]
-      })
+      .then(res => {newStack.push({id: res.id, name: res.name})
+        this.setState(Object.assign({}, this.state, {allTechStacks: newStack}));
+        console.log(this.state);
+    })
   }
 
   handleChange(event) {
@@ -43,7 +49,7 @@ class AdminTechStacks extends React.Component {
   }
 
   deleteTechStack(stackId) {
-    const filteredStacks = this.state.allTechStacks.filter()
+    const filteredStacks = this.state.allTechStacks.filter(stack => stack.id !== stackId)
     const newState = Object.assign({}, this.state.allTechStacks, {
       allTechStacks: filteredStacks
     });
