@@ -1,6 +1,10 @@
 import actionTypes from "../actions/actionTypes";
+import jwtDecode from 'jwt-decode';
+
+
 
 const initialState = {
+  user:localStorage.getItem('jwt')?jwtDecode(localStorage.getItem('jwt')).full_name : null,
   directoryOpen: true,
   eventsOpen: false,
   newsOpen: false,
@@ -11,13 +15,12 @@ const initialState = {
   adminSearchTermsOpen: false,
   registrationOpen: false,
   adminTechStacksOpen: false,
-  admin: true,
+  admin: localStorage.getItem('jwt')?jwtDecode(localStorage.getItem('jwt')).is_admin : false,
   adminEventsOpen: false,
   adminNewsOpen: false,
   adminUsersOpen: false,
   adminTechnologiesOpen: false
 }
-
 export default function formStore(state = initialState, action) {
   switch(action.type) {
     case actionTypes.OPEN_DIRECTORY: {
@@ -43,6 +46,9 @@ export default function formStore(state = initialState, action) {
     }
     case actionTypes.CREATE_TOKEN: {
       return Object.assign({}, state, { admin: action.payload, newsOpen: false, directoryOpen: true, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false, loggedIn: true });
+    }
+    case actionTypes.CREATE_USER: {
+      return Object.assign({}, state, { user:action.payload });
     }
     case actionTypes.OPEN_ADMIN_EVENTS: {
       return Object.assign({}, state, { adminEventsOpen: true, adminUsersOpen: false, adminTechnologiesOpen: false, adminNewsOpen: false, newsOpen: false, directoryOpen: false, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false });

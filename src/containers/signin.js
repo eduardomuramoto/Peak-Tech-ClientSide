@@ -39,7 +39,8 @@ class SignIn extends React.Component {
         () => {
           const jwt = localStorage.getItem('jwt');
           const payload = jwtDecode(jwt);
-          console.log(payload);
+          console.log(payload.full_name);
+          this.props.createUserAction(payload.full_name);
           this.props.createTokenAction(payload.is_admin);
         }
       )
@@ -65,7 +66,7 @@ class SignIn extends React.Component {
 
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" className="form-control" name="password" id="input_last_name" onInput={this.handleChange.bind(this)} value={this.state.password} placeholder="PASSWORD"/>
+              <input type="password" className="form-control" name="password" id="input_last_name" onInput={this.handleChange.bind(this)} value={this.state.password} placeholder="PASSWORD"/>
             </div>
           </div>
 
@@ -89,6 +90,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     createTokenAction: (admin) => { dispatch(actions.createToken(admin))},
+    createUserAction: (user) => { dispatch(actions.createUser(user))},
   }
 };
 
