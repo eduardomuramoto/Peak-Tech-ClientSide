@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import actions from '../actions/index';
+import {Token} from '../requests/tokens';
 
 class SignIn extends React.Component {
   constructor(){
@@ -9,6 +10,8 @@ class SignIn extends React.Component {
       email: "",
       password: ""
     }
+
+    this.createToken = this.createToken.bind(this);
   }
 
   handleChange(event) {
@@ -18,8 +21,19 @@ class SignIn extends React.Component {
     this.setState(newState);
   }
 
-  handleSubmit(){
-    console.log('sign in');
+  createToken () {
+    const {onSignIn = () => {}} = this.props;
+    const {email, password} = this.state;
+    Token
+      .create({email, password})
+      .then(data => {
+        if (!data.error) {
+          const {jwt} = data;
+          localStorage.setItem('jwt', jwt);
+          //redirect
+          onSignIn();
+        }
+      });
   }
 
   render() {
@@ -43,7 +57,7 @@ class SignIn extends React.Component {
 
           <div className="form-group row">
             <div className="col-sm-12 button-column">
-              <button type="button" id="form-submit">SUBMIT</button>
+              <button type="button" id="form-submit" onClick={()=>this.createToken()}>SUBMIT</button>
             </div>
           </div>
           </form>
