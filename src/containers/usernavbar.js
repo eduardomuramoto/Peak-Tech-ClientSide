@@ -16,16 +16,34 @@ class UserNavBar extends Component {
     this.props.openNewsAction();
   }
 
+
+  collapseClick(){
+    let button = document.querySelector('.navbar-toggler').classList
+    let navdrop = document.querySelector('.navbar-toggler').nextSibling.classList
+      console.log(navdrop)
+      if(button.value === "navbar-toggler" && navdrop.value ==="collapse navbar-collapse"){
+        button.value = "navbar-toggler collapsed"
+        navdrop.value ="collapse navbar-collapse show"
+      } else {
+        button.value = "navbar-toggler"
+
+        navdrop.value ="collapse navbar-collapse"
+      }
+  }
+
   render(){
+
+
+
     return (
         <nav className="navbar navbar-expand-md fixed-top" id="navigation">
           <a className="navbar-brand" id="header" href="#">
             <img className="logo" src="images/peaktechlogo.png"/>
           </a>
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <button className="navbar-toggler" type="button" onClick={()=> this.collapseClick()} data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="true" aria-label="Toggle navigation">
             MENU
           </button>
-          <div className="collapse navbar-collapse" id="navbarNavDropdown">
+          <div id="dropshow" className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav">
 
               <li className="nav-item active">

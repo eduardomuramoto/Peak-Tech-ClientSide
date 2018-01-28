@@ -27,7 +27,7 @@ class MapContainer extends Component {
     return (
       <div className="MapContainer">
       <Map
-        style={{width: '80%', height: '60%'}}
+        style={{height: '30vw'}}
         google={this.props.google}
         initialCenter={{
             lat: 49.2819605, lng: -123.1086604
@@ -58,7 +58,22 @@ class MapContainer extends Component {
         </InfoWindow>
 
         </Map>
+      
+            <div className="container">
+          <form className="searchbar">
+            <div className="form-group row">
+              <div className="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                <input type="text" className="form-control" placeholder="Search..."/>
+              </div>
+            </div>
+          </form>
+
       </div>
+      </div>
+
+
+
+    </article>
       );
     }
   }
