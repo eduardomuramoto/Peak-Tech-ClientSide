@@ -1,8 +1,10 @@
 import actionTypes from "../actions/actionTypes";
 import jwtDecode from 'jwt-decode';
 
+
+
 const initialState = {
-  user:jwtDecode(localStorage.getItem('jwt')).full_name?  jwtDecode(localStorage.getItem('jwt')).full_name : null,
+  user:localStorage.getItem('jwt')?jwtDecode(localStorage.getItem('jwt')).full_name : null,
   directoryOpen: true,
   eventsOpen: false,
   newsOpen: false,
@@ -13,7 +15,7 @@ const initialState = {
   adminSearchTermsOpen: false,
   registrationOpen: false,
   adminTechStacksOpen: false,
-  admin: jwtDecode(localStorage.getItem('jwt')).is_admin?  jwtDecode(localStorage.getItem('jwt')).is_admin : false,
+  admin: localStorage.getItem('jwt')?jwtDecode(localStorage.getItem('jwt')).is_admin : false,
   adminEventsOpen: false,
   adminNewsOpen: false,
   adminUsersOpen: false,
