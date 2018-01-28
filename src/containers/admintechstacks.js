@@ -14,7 +14,6 @@ class AdminTechStacks extends React.Component {
       allTechStacks: []
     };
     this.handleChange = this.handleChange.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -36,7 +35,6 @@ class AdminTechStacks extends React.Component {
       .create(newTechInfo)
       .then(res => {newStack.push({id: res.id, name: res.name})
         this.setState(Object.assign({}, this.state, {allTechStacks: newStack}));
-        console.log(this.state);
     })
   }
 
@@ -45,7 +43,6 @@ class AdminTechStacks extends React.Component {
       newTechStack: {name: event.target.value}
     });
     this.setState(newState);
-    // console.log(this.state);
   }
 
   deleteTechStack(stackId) {
@@ -54,19 +51,11 @@ class AdminTechStacks extends React.Component {
       allTechStacks: filteredStacks
     });
     this.setState(newState);
+    TechStack
+      .destroy(stackId)
   }
-  //
-  // deleteTechStack(stackId) {
-  // TechStack
-  //   .destroy (stackId)
-  //   .then(res)
-  //   // .then (res => (
-  //   //   this.setState({allTechStacks: allTechStacks.filter(stack => stack.id !== stackId)})
-  //   // ))
-  // }
 
   render() {
-    // console.log(this.state.allTechStacks)
     return (
       <div className={this.props.adminTechnologiesOpen ? "admintechnologies-open" : "admintechnologies-closed"}>
         <form>
@@ -89,7 +78,7 @@ class AdminTechStacks extends React.Component {
               <td>{stack.name}</td>
               <td>
                 <button
-                  // onClick={this.deleteTechStack(stack.id)}
+                  onClick={()=>this.deleteTechStack(stack.id)}
                   >Delete
                 </button>
               </td>
