@@ -16,20 +16,36 @@ class UserNavBar extends Component {
     this.props.openNewsAction();
   }
 
+
+  collapseClick(){
+    let button = document.querySelector('.navbar-toggler').classList
+
+    console.log(button.value)
+      if(button.value === "navbar-toggler"){
+        button.value = "navbar-toggler collapsed"
+      } else {
+        button.value = "navbar-toggler"
+      }
+
+  }
+
   render(){
+
+
+
     return (
         <nav className="navbar navbar-expand-md fixed-top" id="navigation">
           <a className="navbar-brand" id="header" href="#">
             <img className="logo" src="images/peaktechlogo.png"/>
           </a>
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <button className="navbar-toggler" type="button" onClick={()=> this.collapseClick()} data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             MENU
           </button>
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav">
 
               <li className="nav-item active">
-                <a className="nav-link" href="#" onClick={()=>this.openDirectory()}>DIRECTORY <span class="sr-only"></span></a>
+                <a className="nav-link" href="#" onClick={()=>this.openDirectory()}>DIRECTORY <span className="sr-only"></span></a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#" onClick={()=>this.openEvents()}>EVENTS</a>
