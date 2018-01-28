@@ -36,7 +36,7 @@ class AdminTechStacks extends React.Component {
     // const test = TechStack.all();
     // console.log(test);
     return (
-      <div className={this.props.adminTechStacksOpen ? "admintechstacks-open" : "admintechstacks-closed"}>
+      <div className={this.props.adminTechnologiesOpen ? "admintechnologies-open" : "admintechnologies-closed"}>
         <form>
           <div className="form-group row">
             <div className="col-sm-12">
@@ -49,22 +49,7 @@ class AdminTechStacks extends React.Component {
             </div>
           </div>
         </form>
-        <table>
-          {/* <tbody>
-            <tr><th>Tech Stack</th><th>Action</th></tr>
-            { stacks.map(stack => (
-            <tr>
-              <td>{stack.name}</td>
-              <td>
-                <button
-                  onClick={this.deleteTechStack(stack.id)}
-                  >Delete
-                </button>
-              </td>
-            </tr>
-            )) }
-          </tbody> */}
-        </table>
+
       </div>
     )
   }
@@ -73,7 +58,7 @@ class AdminTechStacks extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    adminTechStacksOpen: state.adminTechStacksOpen,
+    adminTechnologiesOpen: state.adminTechnologiesOpen,
   }
 };
 

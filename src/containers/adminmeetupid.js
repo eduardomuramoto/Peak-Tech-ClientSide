@@ -36,11 +36,11 @@ class AdminMeetUpId extends React.Component {
     // const terms = Mee.all();
 
     return (
-      <div className={this.props.AdminMeetUpIdsOpen ? "adminsearchterms-open" : "adminsearchterms-closed"}>
+      <div className={this.props.adminEventsOpen ? "adminevents-open" : "adminevents-closed"}>
         <form>
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" className="form-control" id="input_name" name="name" onImput={this.handleChange.bind(this)} value={this.state.name}  placeholder="Name"/>
+              <input type="text" className="form-control" id="input_name" name="name" onInput={this.handleChange.bind(this)} value={this.state.name}  placeholder="Name"/>
             </div>
           </div>
 
@@ -50,21 +50,7 @@ class AdminMeetUpId extends React.Component {
             </div>
           </div>
         </form>
-        <table>
-          <tr><th>Meetup ID</th><th>Action</th></tr>
-          { terms.map(term => (
-            <tr>
-              <td>{term.name}</td>
-              <td>
-                <button
-                    onClick={this.deleteMeetUp(term.id)}
-                  >Delete
-                </button>
-              </td>
-            </tr>
-            ))
-          }
-        </table>
+
       </div>
     )
   }
@@ -73,11 +59,11 @@ class AdminMeetUpId extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    AdminMeetUpIdsOpen: state.AdminMeetUpIdsOpen,
+    adminEventsOpen: state.adminEventsOpen,
   }
 };
 
-const mapDispatchToProps = (state) => {
+const mapDispatchToProps = (dispatch) => {
   return {
 
   }
@@ -85,3 +71,21 @@ const mapDispatchToProps = (state) => {
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(AdminMeetUpId);
+
+
+
+{/* <table>
+  <tr><th>Meetup ID</th><th>Action</th></tr>
+  { terms.map(term => (
+    <tr>
+      <td>{term.name}</td>
+      <td>
+        <button
+            onClick={this.deleteMeetUp(term.id)}
+          >Delete
+        </button>
+      </td>
+    </tr>
+    ))
+  }
+</table> */}

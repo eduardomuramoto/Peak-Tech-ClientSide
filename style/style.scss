@@ -423,11 +423,11 @@ input[type=text]:focus {
 }
 
 
-.adminsearchterms-open {
+.adminnews-open {
 
 }
 
-.adminsearchterms-closed {
+.adminnews-closed {
   display: none;
 }
 // ***** End of media queries *****
@@ -440,10 +440,26 @@ input[type=text]:focus {
   display: none;
 }
 
-.admintechstacks-open {
+.admintechnologies-open {
 
 }
 
-.admintechstacks-closed {
+.admintechnologies-closed {
+  display: none;
+}
+
+.adminevents-open {
+
+}
+
+.adminevents-closed {
+  display: none;
+}
+
+.adminusers-open {
+
+}
+
+.adminusers-closed {
   display: none;
 }

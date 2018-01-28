@@ -5,6 +5,13 @@ import WrappedContainer from './maps'
 
 class Directory extends React.Component {
   render() {
+
+    if(this.props.admin){
+      return(
+        <h1> ADMIN ORGANIZATIONS SHIT GOES HERE </h1>
+      )
+    }
+
     return (
       <div className={this.props.directoryOpen ? "directory-open" : "directory-closed"}>
 
@@ -17,7 +24,8 @@ class Directory extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    directoryOpen: state.directoryOpen
+    directoryOpen: state.directoryOpen,
+    admin: state.admin
   }
 };
 

@@ -31,7 +31,7 @@ class AdminSearchTerms extends React.Component {
     // const terms = SearchTerm.all();
 
     return (
-      <div className={this.props.adminSearchTermsOpen ? "adminsearchterms-open" : "adminsearchterms-closed"}>
+      <div className={this.props.adminNewsOpen ? "adminnews-open" : "adminnews-closed"}>
         <form>
           <div className="form-group row">
             <div className="col-sm-12">
@@ -68,11 +68,11 @@ class AdminSearchTerms extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    adminSearchTermsOpen: state.adminSearchTermsOpen,
+    adminNewsOpen: state.adminNewsOpen,
   }
 };
 
-const mapDispatchToProps = (state) => {
+const mapDispatchToProps = (dispatch) => {
   return {
 
   }

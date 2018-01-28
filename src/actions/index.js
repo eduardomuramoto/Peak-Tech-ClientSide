@@ -24,6 +24,18 @@ const actions = {
   },
   createToken: (admin) => {
     return { type: actionTypes.CREATE_TOKEN, payload: admin }
+  },
+  openAdminEvents: () => {
+    return { type: actionTypes.OPEN_ADMIN_EVENTS, payload: undefined}
+  },
+  openAdminNews: () => {
+    return { type: actionTypes.OPEN_ADMIN_NEWS, payload: undefined}
+  },
+  openAdminTechnologies: () => {
+    return { type: actionTypes.OPEN_ADMIN_TECHNOLOGIES, payload: undefined}
+  },
+  openAdminUsers: () => {
+    return { type: actionTypes.OPEN_ADMIN_USERS, payload: undefined}
   }
 };
 

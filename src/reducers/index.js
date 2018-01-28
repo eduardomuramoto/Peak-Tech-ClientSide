@@ -11,7 +11,11 @@ const initialState = {
   adminSearchTermsOpen: false,
   registrationOpen: false,
   adminTechStacksOpen: false,
-  admin: false
+  admin: false,
+  adminEventsOpen: false,
+  adminNewsOpen: false,
+  adminUsersOpen: false,
+  adminTechnologiesOpen: false
 }
 
 export default function formStore(state = initialState, action) {
@@ -39,6 +43,19 @@ export default function formStore(state = initialState, action) {
     }
     case actionTypes.CREATE_TOKEN: {
       return Object.assign({}, state, { admin: action.payload, newsOpen: false, directoryOpen: true, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false, loggedIn: true });
+    }
+    case actionTypes.OPEN_ADMIN_EVENTS: {
+      return Object.assign({}, state, { adminEventsOpen: true, adminUsersOpen: false, adminTechnologiesOpen: false, adminNewsOpen: false, newsOpen: false, directoryOpen: false, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false });
+    }
+    case actionTypes.OPEN_ADMIN_NEWS: {
+      return Object.assign({}, state, { adminNewsOpen: true, adminUsersOpen: false, adminTechnologiesOpen: false, adminEventsOpen: false, newsOpen: false, directoryOpen: false, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false });
+    }
+    case actionTypes.OPEN_ADMIN_TECHNOLOGIES: {
+      return Object.assign({}, state, { adminTechnologiesOpen: true, adminUsersOpen: false, adminNewsOpen: false, adminEventsOpen: false, newsOpen: false, directoryOpen: false, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false });
+    }
+    case actionTypes.OPEN_ADMIN_USERS: {
+      return Object.assign({}, state, { adminUsersOpen: true, adminTechnologiesOpen: false, adminNewsOpen: false, adminEventsOpen: false, newsOpen: false, directoryOpen: false, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false });
+
     }
     default:
       return state;

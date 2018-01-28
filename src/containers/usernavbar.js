@@ -17,6 +17,22 @@ class UserNavBar extends Component {
     this.props.openNewsAction();
   }
 
+  openAdminEvents(){
+    this.props.openAdminEventsAction();
+  }
+
+  openAdminNews(){
+    this.props.openAdminNewsAction();
+  }
+
+  openAdminTechnologies(){
+    this.props.openAdminTechnologiesAction();
+  }
+
+  openAdminUsers(){
+    this.props.openAdminUsersAction();
+  }
+
 
   collapseClick(){
     let button = document.querySelector('.navbar-toggler').classList
@@ -34,7 +50,40 @@ class UserNavBar extends Component {
 
   render(){
 
-
+    if(this.props.admin){
+      return(
+        <nav className="navbar navbar-expand-md fixed-top" id="navigation">
+          <a className="navbar-brand" id="header" href="#">
+            <img className="logo" src="images/peaktechlogo.png"/>
+          </a>
+          <button className="navbar-toggler" type="button" onClick={()=> this.collapseClick()} data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="true" aria-label="Toggle navigation">
+            MENU
+          </button>
+          <div id="dropshow" className="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul className="navbar-nav">
+              <li className="nav-item active">
+                Admin Panel:
+              </li>
+              <li className="nav-item active">
+                <a className="nav-link" href="#" >Organizations <span className="sr-only"></span></a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#" onClick={()=>this.openAdminEvents()}>Events</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#" onClick={()=>this.openAdminNews()}>News</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#" onClick={()=>this.openAdminUsers()} >Users</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#" onClick={()=>this.openAdminTechnologies()}>Technologies</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      )
+    }
 
     return (
         <nav className="navbar navbar-expand-md fixed-top" id="navigation">
@@ -58,7 +107,7 @@ class UserNavBar extends Component {
               </li>
             </ul>
           </div>
-      </nav>
+        </nav>
 
     )
   }
@@ -69,6 +118,10 @@ const mapStateToProps = (state) => {
     directoryOpen: state.directoryOpen,
     eventsOpen: state.eventsOpen,
     newsOpen: state.newsOpen,
+    adminEventsOpen: state.adminEventsOpen,
+    adminNewsOpen: state.adminNewsOpen,
+    adminTechnologiesOpen: state.adminTechnologiesOpen,
+    adminUsersOpen: state.adminUsersOpen,
     admin: state.admin
   }
 };
@@ -78,6 +131,10 @@ const mapDispatchToProps = (dispatch) => {
     openDirectoryAction: () => { dispatch(actions.openDirectory())},
     openEventsAction: () => { dispatch(actions.openEvents())},
     openNewsAction: () => { dispatch(actions.openNews())},
+    openAdminEventsAction: () => { dispatch(actions.openAdminEvents())},
+    openAdminNewsAction: () => { dispatch(actions.openAdminNews())},
+    openAdminTechnologiesAction: () => { dispatch(actions.openAdminTechnologies())},
+    openAdminUsersAction: () => { dispatch(actions.openAdminUsers())}
   }
 }
 
