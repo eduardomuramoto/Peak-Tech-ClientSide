@@ -57,6 +57,7 @@
     "react-big-calendar": "^0.17.0",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.2",
+    "superagent": "^3.8.2",
     "webpack": "^2.5.1"
   }
 }

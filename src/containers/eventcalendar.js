@@ -6,7 +6,8 @@ import moment from 'moment';
 import BigCalendar from 'react-big-calendar';
 import events from '../data/events';
 
-BigCalendar.momentLocalizer(moment)
+BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
+// BigCalendar.momentLocalizer(moment)
 
 require('style-loader!css-loader!react-big-calendar/lib/css/react-big-calendar.css');
 
@@ -19,8 +20,6 @@ class EventCalendar extends React.Component {
           style={{height: '420px'}}
           views ={['month']}
           events={events}
-          startAccessor="startDate"
-          endAccessor="endDate"
         />
       </div>
     )
@@ -29,7 +28,7 @@ class EventCalendar extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    eventsOpen: state.eventsOpen
+
   }
 };
 
