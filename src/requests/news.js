@@ -9,7 +9,7 @@ function  getJwt() {
 export const New = {
   all () {
     return fetch(
-      `${BASE_URL}/api/v1/news`,
+      `${BASE_URL}/api/v1/stories`,
       {
         headers: {
           'Authorization': getJwt()
