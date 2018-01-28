@@ -16,7 +16,7 @@ class AdminUsers extends React.Component {
                 <th scope="col">First</th>
                 <th scope="col">Last</th>
                 <th scope="col">Handle</th>
-              </tr>
+              </tr> 
             </thead>
             <tbody>
               <tr>
