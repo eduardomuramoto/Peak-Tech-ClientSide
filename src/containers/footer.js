@@ -28,10 +28,10 @@ class Footer extends React.Component {
     <div className="footer-nav fixed-bottom">
       <div className =" site-info">
         <div className="copyright-column">
-          <a href="#" onClick={()=>this.openSignIn()}>Sign In</a>
-          <a href="#" onClick={()=>this.openSignUp()}>Sign Up</a>
-          <a href="#" onClick={()=>this.openAbout()}>About</a>
-          <a href="#" onClick={()=>this.openRegistration()}>Create Organization</a>
+          <a href="#" onClick={()=>this.openSignIn()}>SIGN IN</a>
+          <a href="#" onClick={()=>this.openSignUp()}>SIGN UP</a>
+          <a href="#" onClick={()=>this.openAbout()}>ABOUT</a>
+          <a href="#" onClick={()=>this.openRegistration()}>CREATE ORGANIZATION</a>
         </div>
 
           <div className="author-column">
