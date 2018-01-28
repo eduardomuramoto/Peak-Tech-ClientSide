@@ -25,6 +25,9 @@ const actions = {
   createToken: (admin) => {
     return { type: actionTypes.CREATE_TOKEN, payload: admin }
   },
+  createUser: (user) => {
+    return { type: actionTypes.CREATE_USER, payload: user }
+  },
   openAdminEvents: () => {
     return { type: actionTypes.OPEN_ADMIN_EVENTS, payload: undefined}
   },

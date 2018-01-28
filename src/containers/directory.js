@@ -48,7 +48,7 @@ class Directory extends React.Component {
               <div key={organization.id}>
                 <span>{organization.name}</span>
                 <span>Employees: {organization.employees}</span>
-                <button type="button" className="btn btn-dark" onClick={()=>this.currentOrganization(organization)}> Show </button>
+                <button key={organization.id} type="button" className="btn btn-dark" onClick={()=>this.currentOrganization(organization)}> Show </button>
               </div>
             ))
           }

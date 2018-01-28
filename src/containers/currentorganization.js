@@ -7,7 +7,7 @@ class CurrentOrganization extends React.Component {
   render() {
     return (
       <div className={this.props.currentOrganizationOpen ? "currentorganization-open" : "currentorganization-closed"}>
-        <h1>Current Organization</h1>
+        <h1>Hello</h1>
       </div>
     )
   }

@@ -1,6 +1,7 @@
 import actionTypes from "../actions/actionTypes";
 
 const initialState = {
+  user:null,
   directoryOpen: true,
   eventsOpen: false,
   newsOpen: false,
@@ -19,7 +20,6 @@ const initialState = {
   currentOrganizationOpen: false,
   currentOrganizationInfo: {}
 }
-
 export default function formStore(state = initialState, action) {
   switch(action.type) {
     case actionTypes.OPEN_DIRECTORY: {
@@ -46,6 +46,9 @@ export default function formStore(state = initialState, action) {
     case actionTypes.CREATE_TOKEN: {
       return Object.assign({}, state, { admin: action.payload, currentOrganizationOpen: false, newsOpen: false, directoryOpen: true, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false, loggedIn: true });
     }
+    case actionTypes.CREATE_USER: {
+      return Object.assign({}, state, { user:action.payload });
+    }
     case actionTypes.OPEN_ADMIN_EVENTS: {
       return Object.assign({}, state, { adminEventsOpen: true, adminUsersOpen: false, adminTechnologiesOpen: false, adminNewsOpen: false, newsOpen: false, directoryOpen: false, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false });
     }
@@ -59,7 +62,7 @@ export default function formStore(state = initialState, action) {
       return Object.assign({}, state, { adminUsersOpen: true, adminTechnologiesOpen: false, adminNewsOpen: false, adminEventsOpen: false, newsOpen: false, directoryOpen: false, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false });
     }
     case actionTypes.OPEN_CURRENT_ORGANIZATION: {
-      return Object.assign({}, state, { currentOrganizationInfo: action.payload, currentOrganizationOpen: false, adminUsersOpen: true, adminTechnologiesOpen: false, adminNewsOpen: false, adminEventsOpen: false, newsOpen: false, directoryOpen: false, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false });
+      return Object.assign({}, state, { currentOrganizationInfo: action.payload, currentOrganizationOpen: true, adminUsersOpen: true, adminTechnologiesOpen: false, adminNewsOpen: false, adminEventsOpen: false, newsOpen: false, directoryOpen: false, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false });
     }
     default:
       return state;
