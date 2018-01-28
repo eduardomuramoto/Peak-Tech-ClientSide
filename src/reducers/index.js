@@ -1,8 +1,6 @@
 import actionTypes from "../actions/actionTypes";
 import jwtDecode from 'jwt-decode';
 
-
-
 const initialState = {
   user:localStorage.getItem('jwt')?jwtDecode(localStorage.getItem('jwt')).full_name : null,
   directoryOpen: true,
@@ -23,6 +21,7 @@ const initialState = {
   currentOrganizationOpen: false,
   currentOrganizationInfo: {}
 }
+
 export default function formStore(state = initialState, action) {
   switch(action.type) {
     case actionTypes.OPEN_DIRECTORY: {

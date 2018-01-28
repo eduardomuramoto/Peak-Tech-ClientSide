@@ -24,8 +24,9 @@ class Directory extends React.Component {
       })
   }
 
-  currentOrganization(organization){
+  openCurrentOrganization(organization){
     console.log(organization);
+    // console.log(this.props);
     this.props.currentOrganizationAction(organization);
   }
 
@@ -48,7 +49,7 @@ class Directory extends React.Component {
               <div key={organization.id}>
                 <span>{organization.name}</span>
                 <span>Employees: {organization.employees}</span>
-                <button key={organization.id} type="button" className="btn btn-dark" onClick={()=>this.currentOrganization(organization)}> Show </button>
+              <button key={organization.id} type="button" className="btn btn-dark" onClick={()=>this.props.currentOrganizationAction(organization)}> Show </button>
               </div>
             ))
           }
@@ -69,9 +70,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    currentOrganizationAction: (organization) => { dispatch(actions.currentOrganization(organization))},
+    currentOrganizationAction: (organization) => { dispatch(actions.openCurrentOrganization(organization))}
   }
 };
+
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Directory);
