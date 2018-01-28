@@ -32,7 +32,7 @@ class NewOrganization extends React.Component {
     return (
       <div className={this.props.registrationOpen ? "registration-open" : "registration-closed"}>
         <form>
-          <p className="contact-header">Create Organization</p>
+          <p className="contact-header">CREATE ORGANIZATION</p>
           <hr className="rule"/>
 
           <div className="form-group row">

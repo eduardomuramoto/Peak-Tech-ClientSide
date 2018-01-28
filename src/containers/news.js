@@ -31,9 +31,33 @@ class News extends React.Component {
             </div>
           </div>
           <hr/>
+          <div className = "row newsrow">
+            <div className="col-sm-3 col-md-3 col-lg-3" style ={style}>
+            </div>
+            <div className="col-sm-9 col-md-9 col-lg-9">
+              <p>Tech Millionaire steps in to save historic Friedman house</p>
+              <p>7 hours ago - source: The Globe and Mail</p>
+              <p>Tech millionaire steps in to save historic Friedman House... It's
+                a rare event when a historically important house on Vancouver's west side is...
+              </p>
+            </div>
+          </div>
+          <hr/>
+          <div className = "row newsrow">
+            <div className="col-sm-3 col-md-3 col-lg-3" style ={style}>
+            </div>
+            <div className="col-sm-9 col-md-9 col-lg-9">
+              <p>Tech Millionaire steps in to save historic Friedman house</p>
+              <p>7 hours ago - source: The Globe and Mail</p>
+              <p>Tech millionaire steps in to save historic Friedman House... It's
+                a rare event when a historically important house on Vancouver's west side is...
+              </p>
+            </div>
+          </div>
+          <hr/>
 
           <div id="status">0 | 0</div>
-          <div id="wrap"><img src="images/peaktechlogo.png"/></div>
+          <div id="wrap"><img src=""/></div>
 
         </div>
       </div>
