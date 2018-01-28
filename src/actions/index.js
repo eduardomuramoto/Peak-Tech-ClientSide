@@ -42,6 +42,9 @@ const actions = {
   },
   openCurrentOrganization: (organization) => {
     return { type: actionTypes.OPEN_CURRENT_ORGANIZATION, payload: organization}
+  },
+  signOut: () => {
+    return { type: actionTypes.SIGN_OUT, payload: undefined}
   }
 };
 

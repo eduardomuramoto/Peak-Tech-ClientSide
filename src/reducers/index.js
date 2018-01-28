@@ -64,7 +64,11 @@ export default function formStore(state = initialState, action) {
       return Object.assign({}, state, { adminUsersOpen: true, adminTechnologiesOpen: false, adminNewsOpen: false, adminEventsOpen: false, newsOpen: false, directoryOpen: false, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false });
     }
     case actionTypes.OPEN_CURRENT_ORGANIZATION: {
-      return Object.assign({}, state, { currentOrganizationInfo: action.payload, currentOrganizationOpen: true, adminUsersOpen: true, adminTechnologiesOpen: false, adminNewsOpen: false, adminEventsOpen: false, newsOpen: false, directoryOpen: false, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false });
+      return Object.assign({}, state, { currentOrganizationInfo: action.payload, currentOrganizationOpen: true, adminUsersOpen: false, adminTechnologiesOpen: false, adminNewsOpen: false, adminEventsOpen: false, newsOpen: false, directoryOpen: false, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false });
+    }
+    case actionTypes.SIGN_OUT: {
+      return Object.assign({}, state, { currentOrganizationInfo: {}, currentOrganizationOpen: false, adminUsersOpen: false, adminTechnologiesOpen: false, adminNewsOpen: false, adminEventsOpen: false, newsOpen: false, directoryOpen: true, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false, loggedIn: false });
+
     }
     default:
       return state;

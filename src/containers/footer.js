@@ -23,8 +23,9 @@ class Footer extends React.Component {
 
   SignOut(){
     localStorage.removeItem('jwt');
-    this.props.createTokenAction(false)
-    this.props.createUserAction(null)
+    this.props.createTokenAction(false);
+    this.props.createUserAction(null);
+    this.props.signOutAction();
   }
 
   render() {
@@ -78,6 +79,7 @@ const mapDispatchToProps = (dispatch) => {
     openRegistrationAction: () => { dispatch(actions.openRegistration())},
     createTokenAction: (admin) => { dispatch(actions.createToken(admin))},
     createUserAction: (user) => { dispatch(actions.createUser(user))},
+    signOutAction: () => {dispatch(actions.SignOut())},
   }
 }
 
