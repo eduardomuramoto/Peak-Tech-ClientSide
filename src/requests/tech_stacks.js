@@ -9,7 +9,7 @@ function  getJwt() {
 export const TechStack = {
   all () {
     return fetch(
-      `${BASE_URL}/api/v1/tech`,
+      `${BASE_URL}/api/v1/tech_stacks`,
       {
         headers: {
           'Authorization': getJwt()
@@ -20,7 +20,7 @@ export const TechStack = {
   },
   create (params) {
     return fetch(
-      `${BASE_URL}/api/v1/meet_up_id`,
+      `${BASE_URL}/api/v1/tech_stacks`,
       {
         method: 'POST',
         headers: {
@@ -34,7 +34,7 @@ export const TechStack = {
   },
   destroy (id) {
     return fetch(
-      `${BASE_URL}/api/v1/meet_up_id/${id}`,
+      `${BASE_URL}/api/v1/tech_stacks/${id}`,
       {
         method: 'DELETE',
         headers: {

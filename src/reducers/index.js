@@ -8,7 +8,8 @@ const initialState = {
   signUpOpen: false,
   aboutOpen: false,
   adminSearchTermsOpen: false,
-  registrationOpen: false
+  registrationOpen: false,
+  adminTechStacksOpen: true
 }
 
 export default function formStore(state = initialState, action) {
@@ -32,7 +33,7 @@ export default function formStore(state = initialState, action) {
       return Object.assign({}, state, { newsOpen: false, directoryOpen: false, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: true, registrationOpen: false });
     }
     case actionTypes.OPEN_REGISTRATION: {
-      return Object.assign({}, state, { newsOpen: false, directoryOpen: false, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: true });  
+      return Object.assign({}, state, { newsOpen: false, directoryOpen: false, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: true });
     }
     default:
       return state;
