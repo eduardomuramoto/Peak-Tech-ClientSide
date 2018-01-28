@@ -17,6 +17,7 @@ class Footer extends React.Component {
   }
 
   openRegistration(){
+
     this.props.openRegistrationAction();
   }
 

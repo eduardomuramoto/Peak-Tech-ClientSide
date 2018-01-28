@@ -9,6 +9,7 @@ class UserNavBar extends Component {
   }
 
   openEvents(){
+    console.log(this.props.admin)
     this.props.openEventsAction();
   }
 
@@ -68,6 +69,7 @@ const mapStateToProps = (state) => {
     directoryOpen: state.directoryOpen,
     eventsOpen: state.eventsOpen,
     newsOpen: state.newsOpen,
+    admin: state.admin
   }
 };
 

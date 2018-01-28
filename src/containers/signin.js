@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import actions from '../actions/index';
 import {Token} from '../requests/tokens';
+import jwtDecode from 'jwt-decode';
 
 class SignIn extends React.Component {
   constructor(){
@@ -34,12 +35,19 @@ class SignIn extends React.Component {
           //redirect
           onSignIn();
         }
-      });
-      this.props.createTokenAction();
+      }).then(
+        () => {
+          const jwt = localStorage.getItem('jwt');
+          const payload = jwtDecode(jwt);
+          console.log(payload);
+          this.props.createTokenAction(payload.is_admin);
+        }
+      )
       const newState = Object.assign({}, this.state, {
       email: "", password: "",
       });
       this.setState(newState);
+      console.log(this.props.admin);
   }
 
   render() {
@@ -80,7 +88,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createTokenAction: () => { dispatch(actions.createToken())},
+    createTokenAction: (admin) => { dispatch(actions.createToken(admin))},
   }
 };
 
