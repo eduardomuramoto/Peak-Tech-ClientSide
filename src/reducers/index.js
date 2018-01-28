@@ -7,8 +7,9 @@ const initialState = {
   signInOpen: false,
   signUpOpen: false,
   aboutOpen: false,
-  registrationOpen: false,
-  loggedIn: false
+  loggedIn: false,
+  adminSearchTermsOpen: false,
+  registrationOpen: false
 }
 
 export default function formStore(state = initialState, action) {

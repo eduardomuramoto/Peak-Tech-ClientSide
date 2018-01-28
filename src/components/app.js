@@ -9,6 +9,7 @@ import News from '../containers/news.js';
 import About from '../containers/about.js';
 import SignIn from '../containers/signin.js';
 import SignUp from '../containers/signup.js';
+import AdminSearchTerms from '../containers/adminsearchterms.js';
 import NewOrganization from '../containers/neworganization.js';
 
 
@@ -18,6 +19,7 @@ class App extends Component {
       <div>
         <UserNavBar />
         <Directory />
+        <AdminSearchTerms />
         <Events />
         <News />
         <About />
