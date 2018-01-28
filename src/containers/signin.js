@@ -39,7 +39,8 @@ class SignIn extends React.Component {
         () => {
           const jwt = localStorage.getItem('jwt');
           const payload = jwtDecode(jwt);
-          console.log(payload);
+          console.log(payload.full_name);
+          this.props.createUserAction(payload.full_name);
           this.props.createTokenAction(payload.is_admin);
         }
       )
@@ -89,6 +90,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     createTokenAction: (admin) => { dispatch(actions.createToken(admin))},
+    createUserAction: (user) => { dispatch(actions.createUser(user))},
   }
 };
 
