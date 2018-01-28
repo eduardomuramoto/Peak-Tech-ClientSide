@@ -54,25 +54,25 @@ class SignIn extends React.Component {
   render() {
     return (
       <div className={this.props.signInOpen ? "signin-open" : "signin-closed"}>
-        <form>
+        <form className='sign-form'>
           <p className="contact-header">SIGN IN</p>
           <hr className="rule"/>
 
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" id="input_email" name="email" className="form-control" placeholder="E-MAIL" onInput={this.handleChange.bind(this)} value={this.state.email}/>
+              <input type="text" className="input_email" name="email" className="form-control" placeholder="E-MAIL" onInput={this.handleChange.bind(this)} value={this.state.email}/>
             </div>
           </div>
 
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="password" className="form-control" name="password" id="input_last_name" onInput={this.handleChange.bind(this)} value={this.state.password} placeholder="PASSWORD"/>
+              <input type="password" className="form-control input_last_name" name="password" onInput={this.handleChange.bind(this)} value={this.state.password} placeholder="PASSWORD"/>
             </div>
           </div>
 
           <div className="form-group row">
             <div className="col-sm-12 button-column">
-              <button type="button" id="form-submit" onClick={()=>this.createToken()}>SUBMIT</button>
+              <button type="button" className="form-submit" onClick={()=>this.createToken()}>SUBMIT</button>
             </div>
           </div>
           </form>

@@ -33,36 +33,36 @@ class SignUp extends React.Component {
     return (
       <div className={this.props.signUpOpen ? "signup-open" : "signup-closed"}>
 
-        <form>
+        <form className="sign-form">
           <p className="contact-header">SIGN UP</p>
           <hr className="rule"/>
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" className="form-control" id="input_first_name" name="first_name" onInput={this.handleChange.bind(this)} value={this.state.first_name}  placeholder="FIRST NAME"/>
+              <input type="text" className="form-control input_first_name" name="first_name" onInput={this.handleChange.bind(this)} value={this.state.first_name}  placeholder="FIRST NAME"/>
             </div>
           </div>
 
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" className="form-control" id="input_last_name" name="last_name" onInput={this.handleChange.bind(this)} value={this.state.last_name}  placeholder="LAST NAME"/>
+              <input type="text" className="form-control input_last_name" name="last_name" onInput={this.handleChange.bind(this)} value={this.state.last_name}  placeholder="LAST NAME"/>
             </div>
           </div>
 
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" id="input_email" className="form-control"  name="email" onInput={this.handleChange.bind(this)} value={this.state.email} placeholder="E-MAIL"/>
+              <input type="text" className="form-control input_email"  name="email" onInput={this.handleChange.bind(this)} value={this.state.email} placeholder="E-MAIL"/>
             </div>
           </div>
 
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="password" className="form-control" id="input_last_name" name="password" onInput={this.handleChange.bind(this)} value={this.state.password} placeholder="PASSWORD"/>
+              <input type="password" className="form-control input_last_name" name="password" onInput={this.handleChange.bind(this)} value={this.state.password} placeholder="PASSWORD"/>
             </div>
           </div>
 
           <div className="form-group row">
             <div className="col-sm-12 button-column">
-              <button type="button" id="form-submit" onClick={()=>this.handleSubmit()}>SUBMIT</button>
+              <button type="button" className="form-submit" onClick={()=>this.handleSubmit()}>SUBMIT</button>
             </div>
           </div>
           </form>
