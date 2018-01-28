@@ -21,7 +21,8 @@ class SignIn extends React.Component {
     this.setState(newState);
   }
 
-  createToken () {
+
+  createToken() {
     const {onSignIn = () => {}} = this.props;
     const {email, password} = this.state;
     Token
@@ -34,6 +35,11 @@ class SignIn extends React.Component {
           onSignIn();
         }
       });
+      this.props.createTokenAction();
+      const newState = Object.assign({}, this.state, {
+      email: "", password: "",
+      });
+      this.setState(newState);
   }
 
   render() {
@@ -72,9 +78,9 @@ const mapStateToProps = (state) => {
   }
 };
 
-const mapDispatchToProps = (state) => {
+const mapDispatchToProps = (dispatch) => {
   return {
-
+    createTokenAction: () => { dispatch(actions.createToken())},
   }
 };
 

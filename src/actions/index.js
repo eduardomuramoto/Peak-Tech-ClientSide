@@ -21,6 +21,9 @@ const actions = {
   },
   openRegistration: () => {
     return { type: actionTypes.OPEN_REGISTRATION, payload: undefined}
+  },
+  createToken: () => {
+    return { type: actionTypes.CREATE_TOKEN, payload: undefined}
   }
 };
 

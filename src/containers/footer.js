@@ -30,7 +30,7 @@ class Footer extends React.Component {
           <a href="#" onClick={()=>this.openSignIn()}>Sign In</a>
           <a href="#" onClick={()=>this.openSignUp()}>Sign Up</a>
           <a href="#" onClick={()=>this.openAbout()}>About</a>
-        <a href="#" onClick={()=>this.openRegistration()}>Create Organization</a>
+          <a href="#" onClick={()=>this.openRegistration()}>Create Organization</a>
         </div>
 
           <div className="author-column">

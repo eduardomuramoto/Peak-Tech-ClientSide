@@ -58,7 +58,7 @@ class MapContainer extends Component {
         </InfoWindow>
 
         </Map>
-      
+
             <div className="container">
           <form className="searchbar">
             <div className="form-group row">
@@ -71,9 +71,6 @@ class MapContainer extends Component {
       </div>
       </div>
 
-
-
-    </article>
       );
     }
   }
