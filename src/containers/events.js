@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import actions from '../actions/index';
+import EventCalendar from './eventcalendar.js';
 
 class Events extends React.Component {
 
@@ -8,6 +9,7 @@ class Events extends React.Component {
     return (
       <div className={this.props.eventsOpen ? "events-open" : "events-closed"}>
         <h1>Events</h1>
+        <EventCalendar />
       </div>
     )
   }

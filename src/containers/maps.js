@@ -1,11 +1,11 @@
-
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
-class MapContainer extends React.Component {
+class MapContainer extends Component {
   render() {
     return (
+
     <article>
       <div className="MapContainer container">
         <div className="row">
@@ -28,6 +28,7 @@ class MapContainer extends React.Component {
             </Map>
           </div>
         </div>
+
       </div>
 
       <div className="container">
@@ -47,9 +48,20 @@ class MapContainer extends React.Component {
     }
   }
 
+  const mapStateToProps = (state) => {
+    return {
+    }
+  };
+
+  const mapDispatchToProps = (state) => {
+    return {
+
+    }
+  };
+
 
 const WrappedContainer = (GoogleApiWrapper({
     apiKey: "AIzaSyCHgbwaK-pbR1UPZGuXge3dhwQTSYCVzv0"
   })(MapContainer))
 
-  export default WrappedContainer
+export default connect(mapStateToProps, mapDispatchToProps)(WrappedContainer);
