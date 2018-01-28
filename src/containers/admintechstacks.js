@@ -33,8 +33,8 @@ class AdminTechStacks extends React.Component {
   // }
 
   render() {
-    const test = TechStack.all();
-    console.log(test);
+    // const test = TechStack.all();
+    // console.log(test);
     return (
       <div className={this.props.adminTechStacksOpen ? "admintechstacks-open" : "admintechstacks-closed"}>
         <form>
