@@ -11,4 +11,6 @@ npm-debug.log
 
 config.js
 
+package.json
+package-lock.json
 webpack.config.js
