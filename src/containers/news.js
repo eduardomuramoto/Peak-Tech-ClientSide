@@ -5,9 +5,30 @@ import actions from '../actions/index';
 class News extends React.Component {
 
   render() {
+
+    const style = {
+      backgroundImage: "url(https://www.what-dog.net/Images/faces2/scroll001.jpg)",
+      height: "10vw",
+      width: "10vw",
+      backgroundSize: "cover"
+    }
+
     return (
       <div className={this.props.newsOpen ? "news-open" : "news-closed"}>
-        <h1>News</h1>
+        <div className="container">
+          <div className = "row">
+            <div className="col-md-2" style ={style}>
+            </div>
+            <div className="col-md-10">
+              <p>Tech Millionaire steps in to save historic Friedman house</p>
+              <p>7 hours ago - source: The Globe and Mail</p>
+              <p>Tech millionaire steps in to save historic Friedman House... It's
+                a rare event when a historically important house on Vancouver's west side is...
+              </p>
+            </div>
+          </div>
+          <hr/>
+        </div>
       </div>
     )
   }
@@ -26,3 +47,5 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(News);
+
+//
