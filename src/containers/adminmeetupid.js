@@ -17,7 +17,7 @@ class AdminMeetUpId extends React.Component {
   handleSubmit(){
     MeetUpId
       .create({name: this.state.meet_up})
-      console.log({name: this.state.meet_up})
+      // console.log({name: this.state.meet_up})
   }
 
   deleteMeetUp(id){

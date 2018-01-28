@@ -36,6 +36,9 @@ const actions = {
   },
   openAdminUsers: () => {
     return { type: actionTypes.OPEN_ADMIN_USERS, payload: undefined}
+  },
+  openCurrentOrganization: (organization) => {
+    return { type: actionTypes.OPEN_CURRENT_ORGANIZATION, payload: organization}
   }
 };
 
