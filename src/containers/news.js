@@ -21,8 +21,7 @@ class News extends React.Component {
 
       <div className={this.props.newsOpen ? "news-open" : "news-closed"}>
         <div className="container">
-
-
+          
         {
           this.props.news && this.props.news.map(news => (
             <div key={news.id} className="row news-row">

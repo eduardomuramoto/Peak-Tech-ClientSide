@@ -1,19 +1,20 @@
 import actionTypes from "../actions/actionTypes";
 import jwtDecode from 'jwt-decode';
 
-const initialState = localStorage.getItem('jwt')?{
+const initialState = {
   user:localStorage.getItem('jwt')?jwtDecode(localStorage.getItem('jwt')).full_name : null,
-  directoryOpen: true,
+  admin: localStorage.getItem('jwt')?jwtDecode(localStorage.getItem('jwt')).is_admin : false,
+  loggedIn: localStorage.getItem('jwt')?true : false,
+  directoryOpen: localStorage.getItem('jwt')?true:false,
   eventsOpen: false,
   newsOpen: false,
-  signInOpen: false,
+  signInOpen: localStorage.getItem('jwt')?false:true,
   signUpOpen: false,
   aboutOpen: false,
   loggedIn: false,
   adminSearchTermsOpen: false,
   registrationOpen: false,
   adminTechStacksOpen: false,
-  admin: localStorage.getItem('jwt')?jwtDecode(localStorage.getItem('jwt')).is_admin : false,
   adminEventsOpen: false,
   adminNewsOpen: false,
   adminUsersOpen: false,
@@ -24,38 +25,17 @@ const initialState = localStorage.getItem('jwt')?{
   editOrganizationInfo: {},
   editOrganizationOpen: false,
   postSignUpMessage: false,
-  organizationList: []
-}:{
-  user:localStorage.getItem('jwt')?jwtDecode(localStorage.getItem('jwt')).full_name : null,
-  directoryOpen: false,
-  eventsOpen: false,
-  newsOpen: false,
-  signInOpen: true,
-  signUpOpen: false,
-  aboutOpen: false,
-  loggedIn: false,
-  adminSearchTermsOpen: false,
-  registrationOpen: false,
-  adminTechStacksOpen: false,
-  admin: localStorage.getItem('jwt')?jwtDecode(localStorage.getItem('jwt')).is_admin : false,
-  adminEventsOpen: false,
-  adminNewsOpen: false,
-  adminUsersOpen: false,
-  adminTechnologiesOpen: false,
-  currentOrganizationOpen: false,
-  currentOrganizationInfo: {},
-  postSignUpMessage: false,
-  editOrganizationInfo: {},
-  editOrganizationOpen: false,
   organizationList: []
 }
-const stateOpen = {
+
+let stateOpen = {
   directoryOpen: false,
   eventsOpen: false,
   newsOpen: false,
   signInOpen: false,
   signUpOpen: false,
   aboutOpen: false,
+  loggedIn: false,
   adminSearchTermsOpen: false,
   registrationOpen: false,
   adminTechStacksOpen: false,
@@ -66,20 +46,19 @@ const stateOpen = {
   currentOrganizationOpen: false,
   postSignUpMessage: false,
   editOrganizationOpen: false,
-  admin: localStorage.getItem('jwt')?jwtDecode(localStorage.getItem('jwt')).is_admin : false,
-  editOrganizationInfo: {}
+  postSignUpMessage: false,
 }
 
 export default function formStore(state = initialState, action) {
   switch(action.type) {
     case actionTypes.OPEN_DIRECTORY: {
-    return Object.assign({}, state, localStorage.getItem('jwt')?Object.assign({}, stateOpen, {directoryOpen: true}):initialState);
+    return Object.assign({}, state, localStorage.getItem('jwt')?Object.assign({}, stateOpen, {directoryOpen: true}):{signInOpen:true});
     }
     case actionTypes.OPEN_EVENTS: {
-      return Object.assign({}, state, localStorage.getItem('jwt')?Object.assign({}, stateOpen, {eventsOpen: true}):initialState);
+      return Object.assign({}, state, localStorage.getItem('jwt')?Object.assign({}, stateOpen, {eventsOpen: true}):{signInOpen:true});
     }
     case actionTypes.OPEN_NEWS: {
-      return Object.assign({}, state, localStorage.getItem('jwt')?Object.assign({}, stateOpen, {newsOpen: true}):initialState);
+      return Object.assign({}, state, localStorage.getItem('jwt')?Object.assign({}, stateOpen, {newsOpen: true}):{signInOpen:true});
     }
     case actionTypes.OPEN_SIGNIN: {
       return Object.assign({}, state, Object.assign({}, stateOpen, {signInOpen: true}));
@@ -94,7 +73,7 @@ export default function formStore(state = initialState, action) {
       return Object.assign({}, state, localStorage.getItem('jwt')?Object.assign({}, stateOpen, {registrationOpen: true}):initialState);
     }
     case actionTypes.CREATE_TOKEN: {
-      return Object.assign({}, state, { admin: action.payload, currentOrganizationOpen: false, newsOpen: false, directoryOpen: true, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false, loggedIn: true });
+      return Object.assign({}, state, { admin: action.payload, currentOrganizationOpen: false, newsOpen: false, directoryOpen: true, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false, loggedIn: action.payload });
     }
     case actionTypes.CREATE_USER: {
       return Object.assign({}, state, { user:action.payload });
@@ -115,7 +94,7 @@ export default function formStore(state = initialState, action) {
       return Object.assign({}, state, { currentOrganizationInfo: action.payload, currentOrganizationOpen: true, adminUsersOpen: false, adminTechnologiesOpen: false, adminNewsOpen: false, adminEventsOpen: false, newsOpen: false, directoryOpen: false, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false });
     }
     case actionTypes.SIGN_OUT: {
-      return Object.assign({}, state, { currentOrganizationInfo: {}, postSignUpMessage: false, currentOrganizationOpen: false, adminUsersOpen: false, adminTechnologiesOpen: false, adminNewsOpen: false, adminEventsOpen: false, newsOpen: false, directoryOpen: true, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false, loggedIn: false });
+      return Object.assign({}, state, Object.assign({}, stateOpen, {loggedIn: false,admin:false,user:null,signInOpen:true}));
     }
     case actionTypes.SIGN_UP: {
       return Object.assign({}, state, Object.assign({}, stateOpen, {signUpOpen: false, signInOpen: true, postSignUpMessage: true}));
