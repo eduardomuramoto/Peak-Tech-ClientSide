@@ -7,14 +7,14 @@ class EditOrganization extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      name: `${props.editOrganizationInfo.name}`,
-      address: `${props.editOrganizationInfo.address}`,
-      overview: `${props.editOrganizationInfo.overview}`,
-      employees: `${props.editOrganizationInfo.employees}`,
-      team_size: `${props.editOrganizationInfo.team_size}`,
-      website: `${props.editOrganizationInfo.website}`,
-      twitter: `${props.editOrganizationInfo.twitter}`,
-      logo: `${props.editOrganizationInfo.logo}`
+      name: props.editOrganizationInfo.name,
+      address: props.editOrganizationInfo.address,
+      overview: props.editOrganizationInfo.overview,
+      employees: props.editOrganizationInfo.employees,
+      team_size: props.editOrganizationInfo.team_size,
+      website: props.editOrganizationInfo.website,
+      twitter: props.editOrganizationInfo.twitter,
+      logo: props.editOrganizationInfo.logo
     }
   }
 
@@ -41,49 +41,101 @@ class EditOrganization extends React.Component {
 
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" name="name" className="form-control input_name" placeholder={this.props.editOrganizationInfo.name} onInput={this.handleChange.bind(this)} value={this.state.email}/>
+              <input
+                type="text"
+                name="name"
+                className="form-control input_name"
+                placeholder={
+                  this.props.editOrganizationInfo.name
+                    ? `${this.props.editOrganizationInfo.name}`
+                    : "NAME"
+                }
+                onInput={this.handleChange.bind(this)}
+                value={this.state.name}/>
             </div>
           </div>
 
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" className="form-control input_address" name="address" onInput={this.handleChange.bind(this)} value={this.state.password} placeholder="ADDRESS"/>
+              <input
+                type="text"
+                className="form-control input_address"
+                name="address"
+                onInput={this.handleChange.bind(this)}
+                value={this.state.address}
+                placeholder={this.props.editOrganizationInfo.address ? this.props.editOrganizationInfo.address : "ADDRESS" }/>
             </div>
           </div>
 
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" className="form-control input_overview" name="overview" onInput={this.handleChange.bind(this)} value={this.state.password} placeholder="OVERVIEW"/>
+              <input
+                type="text"
+                className="form-control input_overview"
+                name="overview"
+                onInput={this.handleChange.bind(this)}
+                value={this.state.overview}
+                placeholder={this.props.editOrganizationInfo.overview ? this.props.editOrganizationInfo.overview : "OVERVIEW"}/>
             </div>
           </div>
 
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" className="form-control input_employees" name="employees" onInput={this.handleChange.bind(this)} value={this.state.password} placeholder="EMPLOYEES"/>
+              <input
+                type="text"
+                className="form-control input_employees"
+                name="employees"
+                onInput={this.handleChange.bind(this)}
+                value={this.state.employees}
+                placeholder={this.props.editOrganizationInfo.employees ? this.props.editOrganizationInfo.employees : "EMPLOYEES"}/>
             </div>
           </div>
 
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="number" className="form-control input_team_size" name="team_size" onInput={this.handleChange.bind(this)} value={this.state.password} placeholder="TEAM SIZE"/>
+              <input
+                type="number"
+                className="form-control input_team_size"
+                name="team_size"
+                onInput={this.handleChange.bind(this)}
+                value={this.state.team_size}
+                placeholder={this.props.editOrganizationInfo.team_size ? this.props.editOrganizationInfo.team_size : "TEAM SIZE"}/>
             </div>
           </div>
 
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" className="form-control input_website" name="website" onInput={this.handleChange.bind(this)} value={this.state.password} placeholder="WEBSITE"/>
+              <input
+                type="text"
+                className="form-control input_website"
+                name="website"
+                onInput={this.handleChange.bind(this)}
+                value={this.state.website}
+                placeholder={this.props.editOrganizationInfo.website ? this.props.editOrganizationInfo.website : "WEBSITE"}/>
             </div>
           </div>
 
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" className="form-control input_twitter" name="twitter" onInput={this.handleChange.bind(this)} value={this.state.password} placeholder="TWITTER HANDLE"/>
+              <input
+                type="text"
+                className="form-control input_twitter"
+                name="twitter"
+                onInput={this.handleChange.bind(this)}
+                value={this.state.twitter}
+                placeholder={this.props.editOrganizationInfo.twitter ? this.props.editOrganizationInfo.twitter : "TWITTER"}/>
             </div>
           </div>
 
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" className="form-control" name="logo" onInput={this.handleChange.bind(this)} value={this.state.password} placeholder="LOGO URL"/>
+              <input
+                type="text"
+                className="form-control"
+                name="logo"
+                onInput={this.handleChange.bind(this)}
+                value={this.state.logo}
+                placeholder={this.props.editOrganizationInfo.logo ? this.props.editOrganizationInfo.logo : "LOGO URL"}/>
             </div>
           </div>
 

@@ -17,7 +17,6 @@ class Directory extends React.Component {
 
   componentDidMount(){
     this.props.fetchOrganizationsAction();
-
   }
 
   openCurrentOrganization(organization){

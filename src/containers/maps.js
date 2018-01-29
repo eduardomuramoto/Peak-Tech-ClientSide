@@ -35,19 +35,16 @@ class MapContainer extends Component {
         zoom={14}
         >
 
-        {/* <Marker /> */}
-        <Marker
-          onClick={this.onMarkerClick}
-          name={'Code Core'}
-          position={{lat: 49.2819605, lng: -123.1086604}} />
-        <Marker
-          onClick={this.onMarkerClick}
-          name={'NOT Code Core'}
-          position={{lat: 49.2829300, lng: -123.1046604}} />
-        <Marker
-          onClick={this.onMarkerClick}
-          name={'NOT Code Core 2'}
-          position={{lat: 49.2529300, lng: -123.1056604}} />
+        {
+          this.props.organizations.map(organization => (
+            <Marker
+              key={organization.id}
+              onClick={this.onMarkerClick}
+              name={organization.name}
+              position={{lat: organization.latitude, lng: organization.longitude}}
+            />
+          ))
+        }
 
           <InfoWindow
           marker={this.state.activeMarker}
@@ -77,6 +74,7 @@ class MapContainer extends Component {
 
   const mapStateToProps = (state) => {
     return {
+    organizations: state.organizationList,
     }
   };
 
