@@ -16,44 +16,20 @@ class News extends React.Component {
 
       <div className={this.props.newsOpen ? "news-open" : "news-closed"}>
         <div className="container">
-          <div className = "row newsrow">
-            <div className="col-sm-3 col-md-3 col-lg-3" style ={style}>
+          <div className = "row news-row">
+            <div className="col-sm-3 col-md-3 col-lg-3 news-item" style ={style}>
             </div>
             <div className="col-sm-9 col-md-9 col-lg-9">
-              <p>Tech Millionaire steps in to save historic Friedman house</p>
-              <p>7 hours ago - source: The Globe and Mail</p>
-              <p>Tech millionaire steps in to save historic Friedman House... It's
-                a rare event when a historically important house on Vancouver's west side is...
-              </p>
-            </div>
-          </div>
-          <hr/>
-          <div className = "row newsrow">
-            <div className="col-sm-3 col-md-3 col-lg-3" style ={style}>
-            </div>
-            <div className="col-sm-9 col-md-9 col-lg-9">
-              <p>Tech Millionaire steps in to save historic Friedman house</p>
-              <p>7 hours ago - source: The Globe and Mail</p>
-              <p>Tech millionaire steps in to save historic Friedman House... It's
-                a rare event when a historically important house on Vancouver's west side is...
-              </p>
-            </div>
-          </div>
-          <hr/>
-          <div className = "row newsrow">
-            <div className="col-sm-3 col-md-3 col-lg-3" style ={style}>
-            </div>
-            <div className="col-sm-9 col-md-9 col-lg-9" >
-              <p>Tech Millionaire steps in to save historic Friedman house</p>
-              <p>7 hours ago - source: The Globe and Mail</p>
-              <p>Tech millionaire steps in to save historic Friedman House... It's
+              <a href="#"> Tech Millionaire steps in to save historic Friedman house</a>
+              <p className="snippet">7 hours ago - source: <a href="#">The Globe and Mail</a></p>
+              <p className="snippet">Tech millionaire steps in to save historic Friedman House... It's
                 a rare event when a historically important house on Vancouver's west side is...
               </p>
             </div>
           </div>
           <hr/>
 
-          <div id="status">0 | 0</div>
+
           <div id="wrap"><img src=""/></div>
 
         </div>
