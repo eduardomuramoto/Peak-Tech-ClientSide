@@ -80,7 +80,7 @@ class MapContainer extends Component {
     }
   };
 
-  const mapDispatchToProps = (state) => {
+  const mapDispatchToProps = (dispatch) => {
     return {
 
     }

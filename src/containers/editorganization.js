@@ -28,6 +28,8 @@ class EditOrganization extends React.Component {
   handleSubmit(){
     Organization
       .update(this.props.editOrganizationInfo.id, this.state)
+      .then(() => this.props.fetchOrganizationsAction())
+      this.props.openDirectoryAction();
   }
 
   render() {
@@ -103,9 +105,10 @@ const mapStateToProps = (state) => {
   }
 };
 
-const mapDispatchToProps = (state) => {
+const mapDispatchToProps = (dispatch) => {
   return {
-
+    openDirectoryAction: () => { dispatch(actions.openDirectory())},
+    fetchOrganizationsAction: () => { dispatch(actions.fetchOrganizations())}
   }
 };
 

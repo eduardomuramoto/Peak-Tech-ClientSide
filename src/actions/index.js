@@ -1,4 +1,9 @@
 import actionTypes from "./actionTypes";
+import asyncActions from './asynactions';
+
+const {
+  fetchOrganizations,
+} = asyncActions;
 
 const actions = {
   openDirectory: () => {
@@ -51,10 +56,11 @@ const actions = {
   },
   editOrganization: (organization) => {
     return { type: actionTypes.EDIT_ORGANIZATION, payload: organization}
-  },  
+  },
   redirectCreateOrganization: () => {
     return { type: actionTypes.REDIRECT_CREATE_ORGANIZATION, payload: undefined}
-  }
+  },
+  fetchOrganizations,
 };
 
 export default actions;

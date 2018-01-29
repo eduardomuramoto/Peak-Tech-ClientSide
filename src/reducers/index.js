@@ -23,7 +23,8 @@ const initialState = localStorage.getItem('jwt')?{
   postSignUpMessage: false,
   editOrganizationInfo: {},
   editOrganizationOpen: false,
-  postSignUpMessage: false
+  postSignUpMessage: false,
+  organizationList: []
 }:{
   user:localStorage.getItem('jwt')?jwtDecode(localStorage.getItem('jwt')).full_name : null,
   directoryOpen: false,
@@ -45,7 +46,8 @@ const initialState = localStorage.getItem('jwt')?{
   currentOrganizationInfo: {},
   postSignUpMessage: false,
   editOrganizationInfo: {},
-  editOrganizationOpen: false
+  editOrganizationOpen: false,
+  organizationList: []
 }
 const stateOpen = {
   directoryOpen: false,
@@ -122,6 +124,9 @@ export default function formStore(state = initialState, action) {
     }
     case actionTypes.REDIRECT_CREATE_ORGANIZATION: {
       return Object.assign({}, state, Object.assign({}, stateOpen, {directoryOpen:true}));
+    }
+    case actionTypes.SET_ORGANIZATION_LIST: {
+      return Object.assign({}, state, {organizationList: action.payload}, Object.assign({}, stateOpen, {directoryOpen: true}));
     }
     default:
       return state;

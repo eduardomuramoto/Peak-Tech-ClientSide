@@ -4,22 +4,20 @@ import actions from '../actions/index';
 import WrappedContainer from './maps';
 import {Organization} from '../requests/organizations.js';
 
+
 class Directory extends React.Component {
 
   constructor(props){
     super(props);
 
-    this.state = {
-      organizations: []
-    }
+    // this.state = {
+    //   organizations: props.organizationList
+    // }
   }
 
   componentDidMount(){
-    Organization
-      .all()
-      .then(organizations=>{
-        this.setState({organizations: organizations})
-      })
+    this.props.fetchOrganizationsAction();
+
   }
 
   openCurrentOrganization(organization){
@@ -33,7 +31,7 @@ class Directory extends React.Component {
 
   deleteOrganization(organization){
     console.log(organization);
-    const filteredOrganizations = this.state.organizations.filter(org => org.id !== organization.id);
+    const filteredOrganizations = this.props.organizations.filter(org => org.id !== organization.id);
     Organization
       .destroy(organization.id)
        const newState = Object.assign({}, this.state, {organizations: filteredOrganizations});
@@ -41,6 +39,7 @@ class Directory extends React.Component {
   }
 
   render() {
+    if (!this.props.organizations.length) return null;
 
     if(this.props.admin){
       return(
@@ -53,7 +52,7 @@ class Directory extends React.Component {
                 <th scope="col-md-12" className="admin-table-head">ACTION</th>
               </tr>
             </thead>
-            { this.state.organizations.map(organization => (
+            { this.props.organizations.map(organization => (
               <tbody key={organization.id}>
                 <tr>
                   <td>{organization.name}</td>
@@ -78,7 +77,7 @@ class Directory extends React.Component {
         </div>
         <div id="organization-list">
           {
-            this.state.organizations.map(organization => (
+            this.props.organizations.map(organization => (
               <div key={organization.id}>
                 <span>{organization.name}</span>
                 <span>Employees: {organization.employees}</span>
@@ -97,6 +96,7 @@ class Directory extends React.Component {
 const mapStateToProps = (state) => {
   return {
     directoryOpen: state.directoryOpen,
+    organizations: state.organizationList,
     admin: state.admin
   }
 };
@@ -104,7 +104,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     currentOrganizationAction: (organization) => { dispatch(actions.openCurrentOrganization(organization))},
-    editOrganizationAction: (organization) => { dispatch(actions.editOrganization(organization))}
+    editOrganizationAction: (organization) => { dispatch(actions.editOrganization(organization))},
+    fetchOrganizationsAction: () => { dispatch(actions.fetchOrganizations())}
   }
 };
 
