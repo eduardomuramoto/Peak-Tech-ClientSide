@@ -106,10 +106,10 @@ export default function formStore(state = initialState, action) {
       return Object.assign({}, state, Object.assign({}, stateOpen, {directoryOpen:true}));
     }
     case actionTypes.SET_ORGANIZATION_LIST: {
-      return Object.assign({}, state, {organizationList: action.payload}, Object.assign({}, stateOpen, {directoryOpen: true}));
+      return Object.assign({}, state, {organizationList: action.payload});
     }
     case actionTypes.SET_NEWS_LIST: {
-      return Object.assign({}, state, {newsList: action.payload});      
+      return Object.assign({}, state, {newsList: action.payload});
     }
     default:
       return state;
