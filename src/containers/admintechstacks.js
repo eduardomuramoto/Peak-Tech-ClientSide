@@ -58,43 +58,53 @@ class AdminTechStacks extends React.Component {
   render() {
     return (
       <div className={this.props.adminTechnologiesOpen ? "admintechnologies-open" : "admintechnologies-closed"}>
-        <h2>Technologies</h2>
-        <form>
-          <div className="form-group row">
-            <div className="col-sm-12">
-              <label htmlFor="name">Name</label>
-              <input type="text" className="form-control input_name" name="name" onChange={this.handleChange.bind(this)} value={this.state.newTechStack.name}></input>
+        <div className="container">
+          <form className="admin-form">
+            <h4 className="admin-title-header">TECHNOLOGIES</h4>
+            <div className="form-group row">
+              <div className="col-sm-3 add-tag">
+                <p>NAME</p>
+              </div>
+              <div className="col-sm-7">
+                <input type="text" className="form-control input_name" name="name" onChange={this.handleChange.bind(this)} value={this.state.newTechStack.name}></input>
+              </div>
+              <div className="col-sm-2 button-column">
+                <button type="button" className="form-submit" onClick={()=>this.handleSubmit(this.state.newTechStack)}>ADD</button>
+              </div>
             </div>
-          </div>
-          <div className="form-group row">
-            <div className="col-sm-12 button-column">
-              <button type="button" className="form-submit" onClick={()=>this.handleSubmit(this.state.newTechStack)}>Add</button>
-            </div>
-          </div>
-        </form>
-        <p>List of Technologies to be used with organizations</p>
-        <table>
+
+
+
+
+        <div className="container-fluid">
+        <div className="row">
+        <table className="table table-bordered">
           <thead>
-            <tr>
-              <th>Tech Stack</th>
-              <th>Action</th>
+            <tr className="admin-table-row">
+              <th scope="col-md-12" className="admin-table-head">TECH STACK</th>
+              <th scope="col-md-12" className="admin-table-head">ACTION</th>
             </tr>
           </thead>
           <tbody>
+
             { this.state.allTechStacks.map(stack => (
             <tr key={stack.id}>
-              <td>{stack.name}</td>
-              <td>
+              <th scope="row" className="admin-data">{stack.name}</th>
+              <td className="admin-data-remove">
                 <button
                   onClick={()=>this.deleteTechStack(stack.id)}
-                  >remove
+                  >REMOVE
                 </button>
               </td>
             </tr>
             )) }
           </tbody>
         </table>
+          </div>
+        </div>
+      </form>
       </div>
+    </div>
     )
   }
 };
