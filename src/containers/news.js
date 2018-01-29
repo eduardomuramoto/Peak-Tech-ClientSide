@@ -9,7 +9,6 @@ class News extends React.Component {
 
     const style = {
       backgroundImage: "url(https://www.what-dog.net/Images/faces2/scroll001.jpg)",
-
       width: "10vw",
       backgroundSize: "cover"
     }

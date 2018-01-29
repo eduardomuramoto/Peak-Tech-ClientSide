@@ -42,55 +42,55 @@ class NewOrganization extends React.Component {
 
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" id="input_name" name="name" className="form-control" placeholder="NAME" onInput={this.handleChange.bind(this)} value={this.state.email}/>
+              <input type="text" name="name" className="form-control input_name" placeholder="NAME" onInput={this.handleChange.bind(this)} value={this.state.email}/>
             </div>
           </div>
 
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" className="form-control" name="address" id="input_address" onInput={this.handleChange.bind(this)} value={this.state.password} placeholder="ADDRESS"/>
+              <input type="text" className="form-control input_address" name="address" onInput={this.handleChange.bind(this)} value={this.state.password} placeholder="ADDRESS"/>
             </div>
           </div>
 
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" className="form-control" name="overview" id="input_overview" onInput={this.handleChange.bind(this)} value={this.state.password} placeholder="OVERVIEW"/>
+              <input type="text" className="form-control input_overview" name="overview" onInput={this.handleChange.bind(this)} value={this.state.password} placeholder="OVERVIEW"/>
             </div>
           </div>
 
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" className="form-control" name="employees" id="input_employees" onInput={this.handleChange.bind(this)} value={this.state.password} placeholder="EMPLOYEES"/>
+              <input type="text" className="form-control input_employees" name="employees" onInput={this.handleChange.bind(this)} value={this.state.password} placeholder="EMPLOYEES"/>
             </div>
           </div>
 
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="number" className="form-control" name="team_size" id="input_team_size" onInput={this.handleChange.bind(this)} value={this.state.password} placeholder="TEAM SIZE"/>
+              <input type="number" className="form-control input_team_size" name="team_size" onInput={this.handleChange.bind(this)} value={this.state.password} placeholder="TEAM SIZE"/>
             </div>
           </div>
 
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" className="form-control" name="website" id="input_website" onInput={this.handleChange.bind(this)} value={this.state.password} placeholder="WEBSITE"/>
+              <input type="text" className="form-control input_website" name="website" onInput={this.handleChange.bind(this)} value={this.state.password} placeholder="WEBSITE"/>
             </div>
           </div>
 
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" className="form-control" name="twitter" id="input_twitter" onInput={this.handleChange.bind(this)} value={this.state.password} placeholder="TWITTER HANDLE"/>
+              <input type="text" className="form-control input_twitter" name="twitter" onInput={this.handleChange.bind(this)} value={this.state.password} placeholder="TWITTER HANDLE"/>
             </div>
           </div>
 
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" className="form-control" name="logo" id="input_logo" onInput={this.handleChange.bind(this)} value={this.state.password} placeholder="LOGO URL"/>
+              <input type="text" className="form-control" name="logo" onInput={this.handleChange.bind(this)} value={this.state.password} placeholder="LOGO URL"/>
             </div>
           </div>
 
           <div className="form-group row">
             <div className="col-sm-12 button-column">
-              <button type="button" id="form-submit" onClick={()=>this.handleSubmit()}>CREATE</button>
+              <button type="button" className="form-submit" onClick={()=>this.handleSubmit()}>CREATE</button>
             </div>
           </div>
           </form>
