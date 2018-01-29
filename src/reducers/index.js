@@ -1,12 +1,32 @@
 import actionTypes from "../actions/actionTypes";
 import jwtDecode from 'jwt-decode';
 
-const initialState = {
+const initialState = localStorage.getItem('jwt')?{
   user:localStorage.getItem('jwt')?jwtDecode(localStorage.getItem('jwt')).full_name : null,
   directoryOpen: true,
   eventsOpen: false,
   newsOpen: false,
   signInOpen: false,
+  signUpOpen: false,
+  aboutOpen: false,
+  loggedIn: false,
+  adminSearchTermsOpen: false,
+  registrationOpen: false,
+  adminTechStacksOpen: false,
+  admin: localStorage.getItem('jwt')?jwtDecode(localStorage.getItem('jwt')).is_admin : false,
+  adminEventsOpen: false,
+  adminNewsOpen: false,
+  adminUsersOpen: false,
+  adminTechnologiesOpen: false,
+  currentOrganizationOpen: false,
+  currentOrganizationInfo: {},
+  postSignUpMessage: false
+}:{
+  user:localStorage.getItem('jwt')?jwtDecode(localStorage.getItem('jwt')).full_name : null,
+  directoryOpen: false,
+  eventsOpen: false,
+  newsOpen: false,
+  signInOpen: true,
   signUpOpen: false,
   aboutOpen: false,
   loggedIn: false,
@@ -43,13 +63,13 @@ const stateOpen = {
 export default function formStore(state = initialState, action) {
   switch(action.type) {
     case actionTypes.OPEN_DIRECTORY: {
-    return Object.assign({}, state, Object.assign({}, stateOpen, {directoryOpen: true}));
+    return Object.assign({}, state, localStorage.getItem('jwt')?Object.assign({}, stateOpen, {directoryOpen: true}):initialState);
     }
     case actionTypes.OPEN_EVENTS: {
-      return Object.assign({}, state, Object.assign({}, stateOpen, {eventsOpen: true}));
+      return Object.assign({}, state, localStorage.getItem('jwt')?Object.assign({}, stateOpen, {eventsOpen: true}):initialState);
     }
     case actionTypes.OPEN_NEWS: {
-      return Object.assign({}, state, Object.assign({}, stateOpen, {newsOpen: true}));
+      return Object.assign({}, state, localStorage.getItem('jwt')?Object.assign({}, stateOpen, {newsOpen: true}):initialState);
     }
     case actionTypes.OPEN_SIGNIN: {
       return Object.assign({}, state, Object.assign({}, stateOpen, {signInOpen: true}));
@@ -61,7 +81,7 @@ export default function formStore(state = initialState, action) {
       return Object.assign({}, state, Object.assign({}, stateOpen, {aboutOpen: true}));
     }
     case actionTypes.OPEN_REGISTRATION: {
-      return Object.assign({}, state, Object.assign({}, stateOpen, {registrationOpen: true}));
+      return Object.assign({}, state, localStorage.getItem('jwt')?Object.assign({}, stateOpen, {registrationOpen: true}):initialState);
     }
     case actionTypes.CREATE_TOKEN: {
       return Object.assign({}, state, { admin: action.payload, currentOrganizationOpen: false, newsOpen: false, directoryOpen: true, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false, loggedIn: true });
