@@ -33,8 +33,8 @@ class AdminTechStacks extends React.Component {
     const newStack = this.state.allTechStacks.slice(0);
     TechStack
       .create(newTechInfo)
-      .then(res => {newStack.push({id: res.id, name: res.name})
-        this.setState(Object.assign({}, this.state, {allTechStacks: newStack}));
+      .then(res => {newStack.unshift({id: res.id, name: res.name})
+        this.setState(Object.assign({}, this.state, {allTechStacks: newStack, newTechStack: {name: ""}}));
     })
   }
 
@@ -98,7 +98,7 @@ class AdminTechStacks extends React.Component {
                   >REMOVE
                 </button>
               </td>
-          
+
             </tr>
             )) }
           </tbody>

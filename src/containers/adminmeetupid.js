@@ -33,8 +33,8 @@ class AdminMeetUp extends React.Component {
     const newIds = this.state.allIds.slice(0);
     MeetUp
       .create(newMeetUpID)
-      .then(res => {newIds.push({id: res.id, name: res.name})
-        this.setState(Object.assign({}, this.state, {allIds: newIds}));
+      .then(res => {newIds.unshift({id: res.id, name: res.name})
+        this.setState(Object.assign({}, this.state, {allIds: newIds, newId: {name: ""}}));
     })
   }
 

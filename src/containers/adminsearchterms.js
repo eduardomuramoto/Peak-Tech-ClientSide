@@ -34,7 +34,7 @@ class AdminSearchTerms extends React.Component {
     const newSearch = this.state.allSearchTerms.slice(0);
     SearchTerm
       .create(newSearchInfo)
-      .then(res => {newSearch.push({id: res.id, title: res.title})
+      .then(res => {newSearch.unshift({id: res.id, title: res.title})
         this.setState(Object.assign({}, this.state, {allSearchTerms: newSearch, newSearchTerm: {title: ""}}));
     })
   }
