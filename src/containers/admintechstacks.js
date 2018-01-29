@@ -58,7 +58,7 @@ class AdminTechStacks extends React.Component {
   render() {
     return (
       <div className={this.props.adminTechnologiesOpen ? "admintechnologies-open" : "admintechnologies-closed"}>
-        <div className="container">
+        <div className="container main-container">
           <form className="admin-form">
             <h4 className="admin-title-header">TECHNOLOGIES</h4>
             <div className="form-group row">
@@ -98,7 +98,7 @@ class AdminTechStacks extends React.Component {
                   >REMOVE
                 </button>
               </td>
-          
+
             </tr>
             )) }
           </tbody>

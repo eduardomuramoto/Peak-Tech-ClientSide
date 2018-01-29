@@ -59,7 +59,7 @@ class AdminSearchTerms extends React.Component {
   render() {
     return (
       <div className={this.props.adminNewsOpen ? "adminnews-open" : "adminnews-closed"}>
-        <div className="container">
+        <div className="container container-main">
         <form className="admin-form">
           <h4 className="admin-title-header">NEWS</h4>
           <div className="form-group row">

@@ -58,7 +58,7 @@ class AdminMeetUp extends React.Component {
   render() {
     return (
       <div className={this.props.adminEventsOpen ? "adminevents-open" : "adminevents-closed"}>
-        <div className="container">
+        <div className="container main-container">
           <form className="admin-form">
             <h4 className="admin-title-header">EVENTS</h4>
             <div className="form-group row">

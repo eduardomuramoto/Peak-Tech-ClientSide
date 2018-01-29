@@ -34,7 +34,7 @@ class AdminUsers extends React.Component {
   render() {
     return (
       <div className={this.props.adminUsersOpen ? "adminusers-open" : "adminusers-closed"}>
-        <div className="container">
+        <div className="container main-container">
           <form className='admin-form'>
 
             <h4 className="admin-title-header">USERS</h4>
