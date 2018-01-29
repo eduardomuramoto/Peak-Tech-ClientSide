@@ -34,7 +34,11 @@ class Directory extends React.Component {
 
     if(this.props.admin){
       return(
-        <h1> ADMIN ORGANIZATIONS SHIT GOES HERE </h1>
+        <div className={this.props.directoryOpen ?"directory-open" : "directory-closed"}>
+            <h1> ADMIN ORGANIZATIONS SHIT GOES HERE </h1>
+            <h1> ADMIN ORGANIZATIONS SHIT GOES HERE </h1>
+            <h1> ADMIN ORGANIZATIONS SHIT GOES HERE </h1>
+        </div>
       )
     }
 
