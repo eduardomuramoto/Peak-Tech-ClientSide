@@ -117,13 +117,11 @@ export default function formStore(state = initialState, action) {
     case actionTypes.SIGN_UP: {
       return Object.assign({}, state, Object.assign({}, stateOpen, {signUpOpen: false, signInOpen: true, postSignUpMessage: true}));
     }
-<<<<<<< HEAD
     case actionTypes.EDIT_ORGANIZATION: {
       return Object.assign({}, state, { editOrganizationInfo: action.payload, editOrganizationOpen: true, currentOrganizationInfo: {}, currentOrganizationOpen: false, adminUsersOpen: false, adminTechnologiesOpen: false, adminNewsOpen: false, adminEventsOpen: false, newsOpen: false, directoryOpen: false, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false });
-=======
+    }
     case actionTypes.REDIRECT_CREATE_ORGANIZATION: {
       return Object.assign({}, state, Object.assign({}, stateOpen, {directoryOpen:true}));
->>>>>>> c02b0227f67a599ac4a7f095fc54bfc3af5466da
     }
     default:
       return state;
