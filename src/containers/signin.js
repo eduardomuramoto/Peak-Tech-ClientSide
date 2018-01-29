@@ -48,7 +48,6 @@ class SignIn extends React.Component {
       email: "", password: "",
       });
       this.setState(newState);
-      console.log(this.props.admin);
   }
 
   render() {

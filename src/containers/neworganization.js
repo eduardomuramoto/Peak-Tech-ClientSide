@@ -30,7 +30,10 @@ class NewOrganization extends React.Component {
       .create({organization: this.state})
       .then(() => {
         this.props.redirectCreateOrganizationAction();
-      })
+        this.props.fetchOrganizationsAction();
+      });
+      const newState = Object.assign({}, this.state, {name: "", address: "", overview: "", employees: "", team_size: "", website: "", twitter: "", logo: "",});
+      this.setState(newState);
   }
 
   render() {
@@ -108,6 +111,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     redirectCreateOrganizationAction: () => { dispatch(actions.redirectCreateOrganization())},
+    fetchOrganizationsAction: () => { dispatch(actions.fetchOrganizations())}
   }
 };
 
