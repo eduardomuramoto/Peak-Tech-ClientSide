@@ -14,24 +14,28 @@ class AdminTechStacks extends React.Component {
       allTechStacks: []
     };
     this.handleChange = this.handleChange.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
     TechStack
       .all()
       .then (res => (
-        this.setState({allTechStacks: res})
+        this.setState({
+          newTechStack: {
+            name: ""
+          },
+          allTechStacks: res
+        })
       ))
   }
 
   handleSubmit(newTechInfo){
+    const newStack = this.state.allTechStacks.slice(0);
     TechStack
       .create(newTechInfo)
-      const {topStack} = this.state
-      this.setState({
-        allTechStacks: [...topStack]
-      })
+      .then(res => {newStack.push({id: res.id, name: res.name})
+        this.setState(Object.assign({}, this.state, {allTechStacks: newStack}));
+    })
   }
 
   handleChange(event) {
@@ -39,28 +43,19 @@ class AdminTechStacks extends React.Component {
       newTechStack: {name: event.target.value}
     });
     this.setState(newState);
-    // console.log(this.state);
   }
 
   deleteTechStack(stackId) {
-    const filteredStacks = this.state.allTechStacks.filter()
+    const filteredStacks = this.state.allTechStacks.filter(stack => stack.id !== stackId)
     const newState = Object.assign({}, this.state.allTechStacks, {
       allTechStacks: filteredStacks
     });
     this.setState(newState);
+    TechStack
+      .destroy(stackId)
   }
-  //
-  // deleteTechStack(stackId) {
-  // TechStack
-  //   .destroy (stackId)
-  //   .then(res)
-  //   // .then (res => (
-  //   //   this.setState({allTechStacks: allTechStacks.filter(stack => stack.id !== stackId)})
-  //   // ))
-  // }
 
   render() {
-    // console.log(this.state.allTechStacks)
     return (
       <div className={this.props.adminTechnologiesOpen ? "admintechnologies-open" : "admintechnologies-closed"}>
         <form>
@@ -83,7 +78,7 @@ class AdminTechStacks extends React.Component {
               <td>{stack.name}</td>
               <td>
                 <button
-                  // onClick={this.deleteTechStack(stack.id)}
+                  onClick={()=>this.deleteTechStack(stack.id)}
                   >Delete
                 </button>
               </td>

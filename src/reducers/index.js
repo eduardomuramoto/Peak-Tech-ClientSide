@@ -19,31 +19,49 @@ const initialState = {
   adminUsersOpen: false,
   adminTechnologiesOpen: false,
   currentOrganizationOpen: false,
-  currentOrganizationInfo: {}
+  currentOrganizationInfo: {},
+  postSignUpMessage: false
+}
+const stateOpen = {
+  directoryOpen: false,
+  eventsOpen: false,
+  newsOpen: false,
+  signInOpen: false,
+  signUpOpen: false,
+  aboutOpen: false,
+  adminSearchTermsOpen: false,
+  registrationOpen: false,
+  adminTechStacksOpen: false,
+  adminEventsOpen: false,
+  adminNewsOpen: false,
+  adminUsersOpen: false,
+  adminTechnologiesOpen: false,
+  currentOrganizationOpen: false,
+  postSignUpMessage: false,
 }
 
 export default function formStore(state = initialState, action) {
   switch(action.type) {
     case actionTypes.OPEN_DIRECTORY: {
-    return Object.assign({}, state, { directoryOpen: true, currentOrganizationOpen: false, eventsOpen: false, newsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false });
+    return Object.assign({}, state, Object.assign({}, stateOpen, {directoryOpen: true}));
     }
     case actionTypes.OPEN_EVENTS: {
-      return Object.assign({}, state, { eventsOpen: true, currentOrganizationOpen: false, directoryOpen: false, newsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false });
+      return Object.assign({}, state, Object.assign({}, stateOpen, {eventsOpen: true}));
     }
     case actionTypes.OPEN_NEWS: {
-      return Object.assign({}, state, { newsOpen: true, currentOrganizationOpen: false, directoryOpen: false, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false });
+      return Object.assign({}, state, Object.assign({}, stateOpen, {newsOpen: true}));
     }
     case actionTypes.OPEN_SIGNIN: {
-      return Object.assign({}, state, { newsOpen: false, currentOrganizationOpen: false, directoryOpen: false, eventsOpen: false, signInOpen: true, signUpOpen: false, aboutOpen: false, registrationOpen: false });
+      return Object.assign({}, state, Object.assign({}, stateOpen, {signInOpen: true}));
     }
     case actionTypes.OPEN_SIGNUP: {
-      return Object.assign({}, state, { newsOpen: false, currentOrganizationOpen: false, directoryOpen: false, eventsOpen: false, signInOpen: false, signUpOpen: true, aboutOpen: false, registrationOpen: false });
+      return Object.assign({}, state, Object.assign({}, stateOpen, {signUpOpen: true}));
     }
     case actionTypes.OPEN_ABOUT: {
-      return Object.assign({}, state, { newsOpen: false, currentOrganizationOpen: false, directoryOpen: false, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: true, registrationOpen: false });
+      return Object.assign({}, state, Object.assign({}, stateOpen, {aboutOpen: true}));
     }
     case actionTypes.OPEN_REGISTRATION: {
-      return Object.assign({}, state, { newsOpen: false, currentOrganizationOpen: false, directoryOpen: false, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: true });
+      return Object.assign({}, state, Object.assign({}, stateOpen, {registrationOpen: true}));
     }
     case actionTypes.CREATE_TOKEN: {
       return Object.assign({}, state, { admin: action.payload, currentOrganizationOpen: false, newsOpen: false, directoryOpen: true, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false, loggedIn: true });
@@ -52,23 +70,25 @@ export default function formStore(state = initialState, action) {
       return Object.assign({}, state, { user:action.payload });
     }
     case actionTypes.OPEN_ADMIN_EVENTS: {
-      return Object.assign({}, state, { adminEventsOpen: true, adminUsersOpen: false, adminTechnologiesOpen: false, adminNewsOpen: false, newsOpen: false, directoryOpen: false, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false });
+      return Object.assign({}, state, Object.assign({}, stateOpen, {adminEventsOpen: true}));
     }
     case actionTypes.OPEN_ADMIN_NEWS: {
-      return Object.assign({}, state, { adminNewsOpen: true, adminUsersOpen: false, adminTechnologiesOpen: false, adminEventsOpen: false, newsOpen: false, directoryOpen: false, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false });
+      return Object.assign({}, state, Object.assign({}, stateOpen, {adminNewsOpen: true}));
     }
     case actionTypes.OPEN_ADMIN_TECHNOLOGIES: {
-      return Object.assign({}, state, { adminTechnologiesOpen: true, adminUsersOpen: false, adminNewsOpen: false, adminEventsOpen: false, newsOpen: false, directoryOpen: false, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false });
+      return Object.assign({}, state, Object.assign({}, stateOpen, {adminTechnologiesOpen: true}));
     }
     case actionTypes.OPEN_ADMIN_USERS: {
-      return Object.assign({}, state, { adminUsersOpen: true, adminTechnologiesOpen: false, adminNewsOpen: false, adminEventsOpen: false, newsOpen: false, directoryOpen: false, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false });
+      return Object.assign({}, state, Object.assign({}, stateOpen, {adminUsersOpen: true}));
     }
     case actionTypes.OPEN_CURRENT_ORGANIZATION: {
       return Object.assign({}, state, { currentOrganizationInfo: action.payload, currentOrganizationOpen: true, adminUsersOpen: false, adminTechnologiesOpen: false, adminNewsOpen: false, adminEventsOpen: false, newsOpen: false, directoryOpen: false, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false });
     }
     case actionTypes.SIGN_OUT: {
-      return Object.assign({}, state, { currentOrganizationInfo: {}, currentOrganizationOpen: false, adminUsersOpen: false, adminTechnologiesOpen: false, adminNewsOpen: false, adminEventsOpen: false, newsOpen: false, directoryOpen: true, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false, loggedIn: false });
-
+      return Object.assign({}, state, { currentOrganizationInfo: {}, postSignUpMessage: false, currentOrganizationOpen: false, adminUsersOpen: false, adminTechnologiesOpen: false, adminNewsOpen: false, adminEventsOpen: false, newsOpen: false, directoryOpen: true, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false, loggedIn: false });
+    }
+    case actionTypes.SIGN_UP: {
+      return Object.assign({}, state, Object.assign({}, stateOpen, {signUpOpen: false, signInOpen: true, postSignUpMessage: true}));
     }
     default:
       return state;

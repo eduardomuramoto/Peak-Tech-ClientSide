@@ -54,9 +54,14 @@ class SignIn extends React.Component {
   render() {
     return (
       <div className={this.props.signInOpen ? "signin-open" : "signin-closed"}>
-        <form className='sign-form'>
-          <p className="contact-header">SIGN IN</p>
-          <hr className="rule"/>
+        <form>
+          {
+            this.props.postSignUpMessage ? (
+              <p className="contact-header">SIGN IN TO YOUR NEW ACCOUNT</p>
+            ) : (
+              <p className="contact-header">SIGN IN</p>
+            )
+          }
 
           <div className="form-group row">
             <div className="col-sm-12">

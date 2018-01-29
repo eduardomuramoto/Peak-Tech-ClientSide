@@ -21,7 +21,7 @@ class Footer extends React.Component {
     this.props.openRegistrationAction();
   }
 
-  SignOut(){
+  signOut(){
     localStorage.removeItem('jwt');
     this.props.createTokenAction(false);
     this.props.createUserAction(null);
@@ -40,7 +40,7 @@ class Footer extends React.Component {
                   <span>
                     Hello, {this.props.user}
                   </span>
-                  <a href="#" onClick={()=>this.SignOut()}>SIGN OUT</a>
+                  <a href="#" onClick={()=>this.signOut()}>SIGN OUT</a>
                   <a href="#" onClick={()=>this.openAbout()}>ABOUT</a>
                   <a href="#" onClick={()=>this.openRegistration()}>CREATE ORGANIZATION</a>
                 </div>
@@ -79,7 +79,7 @@ const mapDispatchToProps = (dispatch) => {
     openRegistrationAction: () => { dispatch(actions.openRegistration())},
     createTokenAction: (admin) => { dispatch(actions.createToken(admin))},
     createUserAction: (user) => { dispatch(actions.createUser(user))},
-    signOutAction: () => {dispatch(actions.SignOut())},
+    signOutAction: () => {dispatch(actions.signOut())},
   }
 }
 
