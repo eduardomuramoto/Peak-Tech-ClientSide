@@ -65,7 +65,7 @@ class UserNavBar extends Component {
                 ADMIN PANEL:
               </li>
               <li className="nav-item active">
-                <a className="nav-link" href="#" >ORGANIZATIONS<span className="sr-only"></span></a>
+                <a className="nav-link" href="#" onClick={()=>this.openDirectory()}>ORGANIZATIONS<span className="sr-only"></span></a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#" onClick={()=>this.openAdminEvents()}>EVENTS</a>

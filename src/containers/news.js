@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import actions from '../actions/index';
 
 class News extends React.Component {
-
   render() {
 
 
@@ -17,7 +16,6 @@ class News extends React.Component {
 
       <div className={this.props.newsOpen ? "news-open" : "news-closed"}>
         <div className="container">
-
           <div className = "row newsrow">
             <div className="col-sm-3 col-md-3 col-lg-3" style ={style}>
             </div>
@@ -45,7 +43,7 @@ class News extends React.Component {
           <div className = "row newsrow">
             <div className="col-sm-3 col-md-3 col-lg-3" style ={style}>
             </div>
-            <div className="col-sm-9 col-md-9 col-lg-9">
+            <div className="col-sm-9 col-md-9 col-lg-9" >
               <p>Tech Millionaire steps in to save historic Friedman house</p>
               <p>7 hours ago - source: The Globe and Mail</p>
               <p>Tech millionaire steps in to save historic Friedman House... It's
