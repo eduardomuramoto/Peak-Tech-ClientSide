@@ -5,9 +5,7 @@
   width: auto;
 }
 
-.container{
-  margin-bottom: 10%;
-}
+
 
 
 #navigation{
@@ -469,14 +467,19 @@ div > form > div.container-fluid > div > table > tbody > tr:last-child{
 
 }
 
-.admintechnologies-open{
 
-}
 
 
 .admintechnologies-closed {
   display: none;
 }
+
+.adminevents-open, .adminusers-open, .admintechnologies-open, .adminnews-open{
+  .main-container{
+    margin-bottom: 60px;
+  }
+}
+
 
 .adminevents-open, .adminusers-open, .admintechnologies-open, .adminnews-open{
 
