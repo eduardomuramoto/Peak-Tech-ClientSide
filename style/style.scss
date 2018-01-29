@@ -146,6 +146,22 @@
   margin-top: 12vh;
   height: 85vh;
 
+  .rbc-month-view, .rbc-header,.rbc-day-bg{
+    border-style: solid;
+    border-width: thin;
+    border-color: rgba(25,150,170,0);
+    margin: 3px;
+  }
+
+ div > div > div.rbc-month-view > div.rbc-row.rbc-month-header > div,
+ div > div > div.rbc-month-view > div > div.rbc-row-bg > div,
+ div > div > div.rbc-month-view > div{
+    border-left-color: rgba(25,150,170,0) !important;
+    border-right-color: rgba(25,150,170,0.7) !important;
+    border-bottom-color: rgba(25,150,170,0.7);
+    border-top-color: rgba(25,150,170,0);
+  }
+
   .calendar-container{
     padding-top: 40px;
   }
@@ -445,7 +461,7 @@ input[type=text]:focus, input[type="number"]:focus, input[type="password"]:focus
   display: none;
 }
 
-.adminevents-open, .adminusers-open, .admintechnologies-open{
+.adminevents-open, .adminusers-open, .admintechnologies-open, .adminnews-open{
 
   .admin-table-head{
     background-color: rgba(25,150,170, 0.3);
@@ -505,6 +521,11 @@ input[type=text]:focus, input[type="number"]:focus, input[type="password"]:focus
   th, td{
     color: rgba(127,127,127,1);
     text-align: center;
+  }
+
+  .admin-snippet{
+    color: rgba(25,150,170,1);
+    font-size: 12px;
   }
 
 }

@@ -75,7 +75,6 @@ class AdminMeetUp extends React.Component {
 
 
 
-
         <div className="container-fluid">
         <div className="row">
         <table className="table table-bordered">

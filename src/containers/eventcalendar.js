@@ -43,6 +43,7 @@ class EventCalendar extends React.Component {
             height: '420px',
             minWidth:"600px"
           }}
+          onSelectEvent={event => open(event.url)}
           views ={['month']}
           events={this.state.events}
         />
