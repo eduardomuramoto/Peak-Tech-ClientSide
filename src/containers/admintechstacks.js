@@ -73,7 +73,9 @@ class AdminTechStacks extends React.Component {
               </div>
             </div>
 
-
+            <div className="admin-snippet">
+              <p>LIST OF TECHNOLOGIES TO BE USED WITH ORGANIZATIONS</p>
+            </div>
 
 
         <div className="container-fluid">

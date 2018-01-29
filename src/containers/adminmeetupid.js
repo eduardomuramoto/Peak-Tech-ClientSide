@@ -53,6 +53,10 @@ class AdminMeetUpId extends React.Component {
               </div>
             </div>
 
+            <div className="admin-snippet">
+              <p>LIST OF MEETUP.COM MEETUPS TO BE CHECKED DAILY</p>
+            </div>
+
             <div className="container-fluid">
               <div className="row">
 
