@@ -15,7 +15,7 @@ export const User = {
         }
       }
     )
-      .then(res => res.json())
+      .then(res => res.status === 200 ? res.json() : [])
   },
   get (id) {
     return fetch(

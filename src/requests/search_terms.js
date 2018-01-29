@@ -15,7 +15,7 @@ export const SearchTerm = {
         }
       }
     )
-      .then(res => res && res.json())
+      .then(res => res.status === 200 ? res.json() : [])
   },
   get (id) {
     return fetch(

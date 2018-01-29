@@ -19,14 +19,15 @@ class AdminSearchTerms extends React.Component {
   componentDidMount() {
     SearchTerm
       .all()
-      .then (res => (
+      .then (res => {
+        console.log('res', res);
         this.setState({
           newSearchTerm: {
             title: ""
           },
           allSearchTerms: res
         })
-      ))
+      })
   }
 
   handleSubmit(newSearchInfo){
