@@ -79,7 +79,7 @@ const mapDispatchToProps = (dispatch) => {
     openRegistrationAction: () => { dispatch(actions.openRegistration())},
     createTokenAction: (admin) => { dispatch(actions.createToken(admin))},
     createUserAction: (user) => { dispatch(actions.createUser(user))},
-    signOutAction: () => {dispatch(actions.signOut())},
+    signOutAction: () => {dispatch(actions.signOut())}
   }
 }
 

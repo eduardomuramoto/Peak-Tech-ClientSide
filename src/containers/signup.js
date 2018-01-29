@@ -28,6 +28,10 @@ class SignUp extends React.Component {
         console.log(data)
       })
       this.props.signUpAction();
+      const newState = Object.assign({}, this.state, {
+      first_name: "", last_name: "", email: "", password: ""
+      });
+      this.setState(newState);
   }
 
   render() {
@@ -79,7 +83,7 @@ const mapStateToProps = (state) => {
   }
 };
 
-const mapDispatchToProps = (state) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     signUpAction: () => { dispatch(actions.signUp())}
   }

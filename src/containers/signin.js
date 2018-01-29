@@ -87,7 +87,8 @@ class SignIn extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    signInOpen: state.signInOpen
+    signInOpen: state.signInOpen,
+    postSignUpMessage: state.postSignUpMessage
   }
 };
 
