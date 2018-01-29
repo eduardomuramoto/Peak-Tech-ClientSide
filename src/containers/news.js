@@ -20,7 +20,7 @@ class News extends React.Component {
     return (
 
       <div className={this.props.newsOpen ? "news-open" : "news-closed"}>
-        <div className="container">
+        <div className="container main-container">
 
         {
           this.props.news && this.props.news.map(news => (

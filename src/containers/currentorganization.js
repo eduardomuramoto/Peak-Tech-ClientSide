@@ -12,7 +12,7 @@ class CurrentOrganization extends React.Component {
       <div className={this.props.currentOrganizationOpen ? "currentorganization-open" : "currentorganization-closed"}>
 
         <div className="container container-main">
-          <div className="row">
+          <div className="row company-row">
             <div className="col-md-4">
               <img  src="https://d30y9cdsu7xlg0.cloudfront.net/png/621754-200.png"/>
             </div>
@@ -28,7 +28,7 @@ class CurrentOrganization extends React.Component {
 
               <p>TWITTER: {this.props.currentOrganizationInfo.twitter}</p>
             </div>
-            <div className="col-md-3">
+            <div className="col-md-3 map-container">
               <WrappedContainer/>
             </div>
           </div>

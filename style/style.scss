@@ -290,7 +290,7 @@
 }
 
 
-.signin-open, .signup-open, .registration-open, .directory-open{
+.signin-open, .signup-open, .registration-open, .directory-open, .editorganization-open{
   margin-top: 12vh;
   height: 85vh;
 
@@ -474,14 +474,14 @@ div > form > div.container-fluid > div > table > tbody > tr:last-child{
   display: none;
 }
 
-.adminevents-open, .adminusers-open, .admintechnologies-open, .adminnews-open{
+.adminevents-open, .adminusers-open, .admintechnologies-open, .adminnews-open, .directory-open{
   .main-container{
     margin-bottom: 60px;
   }
 }
 
 
-.adminevents-open, .adminusers-open, .admintechnologies-open, .adminnews-open{
+.adminevents-open, .adminusers-open, .admintechnologies-open, .adminnews-open, .editorganization-open, .directory-open{
 
   .admin-table-head{
     background-color: rgba(25,150,170, 0.3);
@@ -491,7 +491,7 @@ div > form > div.container-fluid > div > table > tbody > tr:last-child{
     background-color: rgba(25,150,170, 0.1);
   }
 
-  input[type="text"]{
+  input[type="text"], input[type="number"]{
     background-color: rgba(25,150,170,0.1);
     color: rgba(25,150,170,1);
     border-color: rgba(25,150,170,0);
@@ -574,8 +574,18 @@ div > form > div.container-fluid > div > table > tbody > tr:last-child{
     margin-top: 100px;
   }
   .info-container{
-    background-color:rgba(25,150,170,0.2)
+    background-color:rgba(25,150,170,0.2);
+
   }
+  .company-row{
+    border-style:solid;
+    border-width: thin;
+    border-color: rgba(25,150,170,0.2);
+    padding-right: 14px;
+    padding
+  }
+
+
 }
 
 .currentorganization-closed {
