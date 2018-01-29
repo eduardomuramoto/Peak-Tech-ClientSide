@@ -46,37 +46,42 @@ class Directory extends React.Component {
 
   render() {
     const grabbedOrganizations = this.props.organizations.filter(organization => organization.name.includes(this.state.searchValue));
-    if (!this.props.organizations.length)
-      return null;
+    if (!this.props.organizations.length) return null;
 
-    if (this.props.admin) {
-      return (<div className={this.props.directoryOpen
-          ? "directory-open"
-          : "directory-closed"}>
-        <table>
-          <thead>
-            <tr className="admin-table-row">
-              <th scope="col-md-12" className="admin-table-head">ORGANIZATION NAME</th>
-              <th scope="col-md-12" className="admin-table-head">PUBLISHED</th>
-              <th scope="col-md-12" className="admin-table-head">ACTION</th>
-            </tr>
-          </thead>
-          {
-            this.props.organizations.map(organization => (
-              <tbody key={organization.id}>
-              <tr>
-                <td>{organization.name}</td>
-                <td>Yes</td>
-                <td>
-                  <a href="#" onClick={() => this.props.currentOrganizationAction(organization)}>show</a>|
-                  <a href="#" onClick={() => this.props.editOrganizationAction(organization)}>edit</a>|
-                  <a href="#" onClick={() => this.deleteOrganization(organization)}>remove</a>
-                </td>
+    if(this.props.admin){
+      return(
+        <div className={this.props.directoryOpen ?"directory-open" : "directory-closed"}>
+          <div className="container main-container">
+            <form className='admin-form'>
+          <table className="table table-bordered">
+            <thead>
+              <tr className="admin-table-row">
+                <th scope="col-md-12" className="admin-table-head">ORGANIZATION NAME</th>
+                <th scope="col-md-12" className="admin-table-head">PUBLISHED</th>
+                <th scope="col-md-12" className="admin-table-head">ACTION</th>
               </tr>
-            </tbody>))
-          }
-        </table>
-      </div>)
+            </thead>
+            <tbody >
+            { this.props.organizations.map(organization => (
+
+                <tr key={organization.id}>
+
+                  <td scope="row" className="admin-data">{organization.name}</td>
+                  <td className="admin-data">Yes</td>
+                  <td>
+                    <a href="#" onClick={()=>this.props.currentOrganizationAction(organization)}>show</a>|
+                    <a href="#" onClick={()=>this.props.editOrganizationAction(organization)}>edit</a>|
+                    <a href="#" onClick={()=>this.deleteOrganization(organization)}>remove</a>
+                  </td>
+                </tr>
+
+            )) }
+          </tbody>
+          </table>
+        </form>
+        </div>
+        </div>
+      )
     }
 
     return (<div className={this.props.directoryOpen

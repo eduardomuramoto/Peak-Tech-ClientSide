@@ -570,7 +570,12 @@ div > form > div.container-fluid > div > table > tbody > tr:last-child{
 }
 
 .currentorganization-open {
-
+  .container-main{
+    margin-top: 100px;
+  }
+  .info-container{
+    background-color:rgba(25,150,170,0.2)
+  }
 }
 
 .currentorganization-closed {
