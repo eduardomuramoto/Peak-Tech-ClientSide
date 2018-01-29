@@ -90,7 +90,7 @@ class AdminTechStacks extends React.Component {
           <tbody>
 
             { this.state.allTechStacks.map(stack => (
-            <tr key={stack.id}>
+            <tr key={stack.id} className="admin-add-row">
               <th scope="row" className="admin-data">{stack.name}</th>
               <td className="admin-data-remove">
                 <button
@@ -98,6 +98,7 @@ class AdminTechStacks extends React.Component {
                   >REMOVE
                 </button>
               </td>
+          
             </tr>
             )) }
           </tbody>
