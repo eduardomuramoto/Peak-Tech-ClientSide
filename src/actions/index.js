@@ -51,6 +51,9 @@ const actions = {
   },
   editOrganization: (organization) => {
     return { type: actionTypes.EDIT_ORGANIZATION, payload: organization}
+  },  
+  redirectCreateOrganization: () => {
+    return { type: actionTypes.REDIRECT_CREATE_ORGANIZATION, payload: undefined}
   }
 };
 

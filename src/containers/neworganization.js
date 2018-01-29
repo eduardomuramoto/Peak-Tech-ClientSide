@@ -28,8 +28,8 @@ class NewOrganization extends React.Component {
   handleSubmit(){
     Organization
       .create({organization: this.state})
-      .then(data => {
-        console.log(data)
+      .then(() => {
+        this.props.redirectCreateOrganizationAction();
       })
   }
 
@@ -105,9 +105,9 @@ const mapStateToProps = (state) => {
   }
 };
 
-const mapDispatchToProps = (state) => {
+const mapDispatchToProps = (dispatch) => {
   return {
-
+    redirectCreateOrganizationAction: () => { dispatch(actions.redirectCreateOrganization())},
   }
 };
 
