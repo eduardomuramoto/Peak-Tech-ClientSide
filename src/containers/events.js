@@ -8,7 +8,6 @@ class Events extends React.Component {
   render() {
     return (
       <div className={this.props.eventsOpen ? "events-open" : "events-closed"}>
-        <h1>Events</h1>
         <EventCalendar />
       </div>
     )

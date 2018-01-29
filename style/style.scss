@@ -18,7 +18,7 @@
   padding-left: 10px;
   padding-right: 0;
   min-height: 60px;
-  background-color: rgba(250,250,250,0.85);
+  background-color: rgba(245,245,245,0.85);
   border-style: solid;
   border-top-color: rgba(255,255,255,0);
   border-right-color: rgba(255,255,255,0);
@@ -35,10 +35,23 @@
   color: rgba(25,150,170,1);
 }
 
+.navbar>button{
+  background-color: rgba(25,150,170,0.7);
+  color: rgba(255,255,255,1);
+  border-radius: 0px;
+}
+
 .navbar-toggler{
-  border-color: rgba(25,150,170,1);
+
   padding-right: 4px;
   padding-left:4px;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 0;
+  color: rgba(25,150,170,1);
+  margin-right: 10px;
+  font-weight: lighter;
+  background-color: rgba(25,150,170,1);
 }
 
 .navbar-brand{
@@ -54,12 +67,7 @@
   font-size: 0.8em
 }
 
-.navbar-toggler{
-  border-radius: 0;
-  color: rgba(25,150,170,1);
-  margin-right: 10px;
-  font-weight: lighter;
-}
+
 
 .nav-link{
   font-family: 'Aldrich', sans-serif;
@@ -137,7 +145,6 @@
 .events-open {
   margin-top: 12vh;
   height: 85vh;
-  //
 
 
   .rbc-toolbar{
@@ -181,11 +188,21 @@
   height: 100px;
   width: 100%;
   }
-  .newsrow{
-    border-style:solid;
-    border-color: rgba(200,200,200,1);
-    border-width: thin;
-    padding: 10px;
+
+  div > div.row.news-row{
+     border-style: solid;
+     border-color: rgba(25,150,170,0.3);
+     border-width: thin;
+     padding: 10px;
+     margin: 20px;
+   }
+
+  .news-item{
+    width: 10vw;
+    background-size: cover;
+  }
+  .snippet{
+    font-size: 12px;
   }
 
 
@@ -201,6 +218,8 @@
     height:500px; background:#09F;
     margin:10px 0px;
   }
+
+
 
 
 }
@@ -459,7 +478,7 @@ input[type=text]:focus, input[type="number"]:focus, input[type="password"]:focus
   }
 
   .admin-form{
-    padding-top: 50px;
+    padding-top: 100px;
     margin-left: auto;
     margin-right: auto;
     width: 800px;
@@ -524,7 +543,7 @@ input[type=text]:focus, input[type="number"]:focus, input[type="password"]:focus
 
 @media only screen and (max-width: 576px){
   #navigation{
-    background: rgba(255, 255,255,1);
+    background-color: rgba(245, 245,245,0.9);
     min-height: 50px;
   }
   .navbar-item{
@@ -537,7 +556,7 @@ input[type=text]:focus, input[type="number"]:focus, input[type="password"]:focus
 
 @media only screen and (max-width: 768px) {
   #navigation{
-    background: rgba(250,250,250,0.85);
+    background: rgba(245,245,245,0.9);
     min-height: 50px;
     border-style: solid;
     border-top-color: rgba(255,255,255,0);
