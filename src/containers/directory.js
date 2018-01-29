@@ -4,40 +4,48 @@ import actions from '../actions/index';
 import WrappedContainer from './maps';
 import {Organization} from '../requests/organizations.js';
 
-
 class Directory extends React.Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
 
-    // this.state = {
-    //   organizations: props.organizationList
-    // }
+    this.state = {
+      searchValue: ""
+    }
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.props.fetchOrganizationsAction();
   }
 
-  openCurrentOrganization(organization){
+  openCurrentOrganization(organization) {
     // console.log(this.props);
     this.props.currentOrganizationAction(organization);
   }
 
-  editOrganization(organization){
+  editOrganization(organization) {
     this.props.editOrganizationAction(organization);
   }
 
-  deleteOrganization(organization){
+  deleteOrganization(organization) {
     console.log(organization);
     const filteredOrganizations = this.props.organizations.filter(org => org.id !== organization.id);
-    Organization
-      .destroy(organization.id)
-       const newState = Object.assign({}, this.state, {organizations: filteredOrganizations});
-       this.setState(newState);
+    Organization.destroy(organization.id)
+    const newState = Object.assign({}, this.state, {organizations: filteredOrganizations});
+    this.setState(newState);
+  }
+
+  handleChange(event) {
+    const newState = Object.assign({}, this.state, {
+      [event.target.name]: event.target.value,
+    });
+    this.setState(newState);
+    console.log(this.state);
+    this.props.fetchOrganizationsAction();
   }
 
   render() {
+    const grabbedOrganizations = this.props.organizations.filter(organization => organization.name.includes(this.state.searchValue));
     if (!this.props.organizations.length) return null;
 
     if(this.props.admin){
@@ -76,45 +84,65 @@ class Directory extends React.Component {
       )
     }
 
-    return (
-      <div className={this.props.directoryOpen ? "directory-open" : "directory-closed"}>
-        <div>
-          <WrappedContainer/>
-        </div>
-        <div id="organization-list">
-          {
-            this.props.organizations.map(organization => (
-              <div key={organization.id}>
-                <span>{organization.name}</span>
-                <span>Employees: {organization.employees}</span>
-              <button key={organization.id} type="button" className="btn btn-dark" onClick={()=>this.props.currentOrganizationAction(organization)}> Show </button>
-              </div>
-            ))
-          }
-        </div>
-
+    return (<div className={this.props.directoryOpen
+        ? "directory-open"
+        : "directory-closed"}>
+      <div>
+        <WrappedContainer/>
       </div>
-    )
+      <div id="organization-list">
+        <div className="container">
+          <form className="searchbar">
+            <div className="form-group row">
+              <div className="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                <input
+                  type="text"
+                  name="searchValue"
+                  className="form-control"
+                  placeholder="Search..."
+                  value={this.state.searchValue}
+                  onInput={this.handleChange.bind(this)}
+                />
+              </div>
+            </div>
+          </form>
+
+        </div>
+        {
+          grabbedOrganizations.map(organization => (<div key={organization.id}>
+            <span>{organization.name}</span>
+            <span>Employees: {organization.employees}</span>
+            <button key={organization.id} type="button" className="btn btn-dark" onClick={() => this.props.currentOrganizationAction(organization)}>
+              Show
+            </button>
+          </div>))
+        }
+      </div>
+
+    </div>)
   }
 };
-
 
 const mapStateToProps = (state) => {
   return {
     directoryOpen: state.directoryOpen,
     organizations: state.organizationList,
     admin: state.admin
-  }
+    }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    currentOrganizationAction: (organization) => { dispatch(actions.openCurrentOrganization(organization))},
-    editOrganizationAction: (organization) => { dispatch(actions.editOrganization(organization))},
-    fetchOrganizationsAction: () => { dispatch(actions.fetchOrganizations())}
+    currentOrganizationAction: (organization) => {
+      dispatch(actions.openCurrentOrganization(organization))
+    },
+    editOrganizationAction: (organization) => {
+      dispatch(actions.editOrganization(organization))
+    },
+    fetchOrganizationsAction: () => {
+      dispatch(actions.fetchOrganizations())
+    }
   }
 };
-
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(Directory);
