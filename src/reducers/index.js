@@ -43,7 +43,7 @@ const initialState = localStorage.getItem('jwt')?{
   adminTechnologiesOpen: false,
   currentOrganizationOpen: false,
   currentOrganizationInfo: {},
-  postSignUpMessage: false
+  postSignUpMessage: false,
   editOrganizationInfo: {},
   editOrganizationOpen: false
 }
