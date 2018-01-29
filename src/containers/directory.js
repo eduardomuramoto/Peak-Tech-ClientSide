@@ -43,7 +43,9 @@ class Directory extends React.Component {
     if(this.props.admin){
       return(
         <div className={this.props.directoryOpen ?"directory-open" : "directory-closed"}>
-          <table>
+          <div className="container main-container">
+            <form className='admin-form'>
+          <table className="table table-bordered">
             <thead>
               <tr className="admin-table-row">
                 <th scope="col-md-12" className="admin-table-head">ORGANIZATION NAME</th>
@@ -51,20 +53,25 @@ class Directory extends React.Component {
                 <th scope="col-md-12" className="admin-table-head">ACTION</th>
               </tr>
             </thead>
+            <tbody >
             { this.props.organizations.map(organization => (
-              <tbody key={organization.id}>
-                <tr>
-                  <td>{organization.name}</td>
-                  <td>Yes</td>
+
+                <tr key={organization.id}>
+
+                  <td scope="row" className="admin-data">{organization.name}</td>
+                  <td className="admin-data">Yes</td>
                   <td>
                     <a href="#" onClick={()=>this.props.currentOrganizationAction(organization)}>show</a>|
                     <a href="#" onClick={()=>this.props.editOrganizationAction(organization)}>edit</a>|
                     <a href="#" onClick={()=>this.deleteOrganization(organization)}>remove</a>
                   </td>
                 </tr>
-              </tbody>
+
             )) }
+          </tbody>
           </table>
+        </form>
+        </div>
         </div>
       )
     }

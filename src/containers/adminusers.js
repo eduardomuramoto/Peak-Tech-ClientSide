@@ -66,19 +66,8 @@ class AdminUsers extends React.Component {
                       </td>
                     </tr>
                   ))
-                }
-                  {/* <tr>
-                    <th scope="row" className="admin-data">JOE SMITH</th>
-                    <td className="admin-data-remove">joe@wishpond.com</td>
-                    <th scope="row" className="admin-data">Wishpond</th>
-                    <td className="admin-data-remove">accept reject</td>
-                  </tr>
-                  <tr>
-                    <th scope="row" className="admin-data">JOE SMITH</th>
-                    <td className="admin-data-remove">joe@wishpond.com</td>
-                    <th scope="row" className="admin-data">Wishpond</th>
-                    <td className="admin-data-remove">accept reject</td>
-                  </tr> */}
+                  }
+
 
                 </tbody>
               </table>

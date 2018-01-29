@@ -1,19 +1,48 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import actions from '../actions/index';
+import WrappedContainer from './maps';
 
 class CurrentOrganization extends React.Component {
   render() {
+
+
+
     return (
       <div className={this.props.currentOrganizationOpen ? "currentorganization-open" : "currentorganization-closed"}>
-        <h1>{this.props.currentOrganizationInfo.name}</h1>
 
-        <h3>{this.props.currentOrganizationInfo.address}</h3>
-        <h3>{this.props.currentOrganizationInfo.overview}</h3>
-        <h3>{this.props.currentOrganizationInfo.employees}</h3>
-        <h3>{this.props.currentOrganizationInfo.team_size}</h3>
-        <h3>{this.props.currentOrganizationInfo.website}</h3>
-        <h3>{this.props.currentOrganizationInfo.twitter}</h3>
+        <div className="container container-main">
+          <div className="row">
+            <div className="col-md-4">
+              <img  src="https://d30y9cdsu7xlg0.cloudfront.net/png/621754-200.png"/>
+            </div>
+            <div className="col-md-5 info-container">
+
+              <h3>{this.props.currentOrganizationInfo.name}</h3>
+              <a href={this.props.currentOrganizationInfo.website}>(VISIT WEBSITE)</a>
+
+              <p>{this.props.currentOrganizationInfo.overview}</p>
+              <p>ADDRESS: {this.props.currentOrganizationInfo.address}</p>
+              <p>EMPLOYEES: {this.props.currentOrganizationInfo.employees}</p>
+              <p>TEAM SIZE: {this.props.currentOrganizationInfo.team_size}</p>
+
+              <p>TWITTER: {this.props.currentOrganizationInfo.twitter}</p>
+            </div>
+            <div className="col-md-3">
+              <WrappedContainer/>
+            </div>
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
       </div>
     )
   }
