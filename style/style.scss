@@ -122,12 +122,13 @@
   height: 85vh;
 
   .MapContainer{
-    height: 50vw;
+    height: 380px;
     position: relative !important;
   }
 
   .searchbar{
-    padding-top: 55vh;
+    // padding-top: 55vh;
+    padding-top:5px;
     margin: 0px;
     width: 100%;
     margin-right: auto;
@@ -568,6 +569,8 @@ div > form > div.container-fluid > div > table > tbody > tr:last-child{
   margin: 20px;
   padding: 20px;
 }
+
+
 
 .currentorganization-open {
   .container-main{
