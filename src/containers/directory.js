@@ -68,10 +68,10 @@ class Directory extends React.Component {
 
                   <td scope="row" className="admin-data">{organization.name}</td>
                   <td className="admin-data">Yes</td>
-                  <td>
-                    <a href="#" onClick={()=>this.props.currentOrganizationAction(organization)}>show</a>|
-                    <a href="#" onClick={()=>this.props.editOrganizationAction(organization)}>edit</a>|
-                    <a href="#" onClick={()=>this.deleteOrganization(organization)}>remove</a>
+                  <td className="admin-data">
+                    <a href="#" onClick={()=>this.props.currentOrganizationAction(organization)}>SHOW</a>|
+                    <a href="#" onClick={()=>this.props.editOrganizationAction(organization)}>EDIT</a>|
+                    <a href="#" onClick={()=>this.deleteOrganization(organization)}>REMOVE</a>
                   </td>
                 </tr>
 
