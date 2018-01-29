@@ -132,7 +132,7 @@ class NewOrganization extends React.Component {
 
           <div id="checkboxes">
             { this.state.allTechStacks.map(stack => (
-              <label for={stack.id} key={stack.id}>
+              <label htmlFor={stack.id} key={stack.id}>
                 <input type="checkbox" name="tech_stack_ids" id={stack.id} value={stack.id} onChange={this.handleInputChange.bind(this)} />
                 {stack.name}
               </label>
