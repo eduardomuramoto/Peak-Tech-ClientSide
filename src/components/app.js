@@ -15,6 +15,7 @@ import NewOrganization from '../containers/neworganization.js';
 import AdminMeetUpId from '../containers/adminmeetupid';
 import AdminUsers from '../containers/adminusers.js';
 import CurrentOrganization from '../containers/currentorganization.js';
+import EditOrganization from '../containers/editorganization.js';
 
 
 class App extends Component {
@@ -27,6 +28,7 @@ class App extends Component {
         <AdminTechStacks />
         <AdminMeetUpId />
         <AdminUsers />
+        <EditOrganization />
         <CurrentOrganization />
         <Events />
         <News />

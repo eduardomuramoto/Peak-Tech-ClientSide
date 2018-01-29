@@ -48,6 +48,9 @@ const actions = {
   },
   signUp: () => {
     return { type: actionTypes.SIGN_UP, payload: undefined}
+  },
+  editOrganization: (organization) => {
+    return { type: actionTypes.EDIT_ORGANIZATION, payload: organization}
   }
 };
 

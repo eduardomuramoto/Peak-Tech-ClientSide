@@ -18,16 +18,26 @@ class Directory extends React.Component {
     Organization
       .all()
       .then(organizations=>{
-        console.log(organizations);
         this.setState({organizations: organizations})
-        console.log(this.state);
       })
   }
 
   openCurrentOrganization(organization){
-    console.log(organization);
     // console.log(this.props);
     this.props.currentOrganizationAction(organization);
+  }
+
+  editOrganization(organization){
+    this.props.editOrganizationAction(organization);
+  }
+
+  deleteOrganization(organization){
+    console.log(organization);
+    const filteredOrganizations = this.state.organizations.filter(org => org.id !== organization.id);
+    Organization
+      .destroy(organization.id)
+       const newState = Object.assign({}, this.state, {organizations: filteredOrganizations});
+       this.setState(newState);
   }
 
   render() {
@@ -35,9 +45,28 @@ class Directory extends React.Component {
     if(this.props.admin){
       return(
         <div className={this.props.directoryOpen ?"directory-open" : "directory-closed"}>
-            <h1> ADMIN ORGANIZATIONS SHIT GOES HERE </h1>
-            <h1> ADMIN ORGANIZATIONS SHIT GOES HERE </h1>
-            <h1> ADMIN ORGANIZATIONS SHIT GOES HERE </h1>
+          <table>
+            <thead>
+              <tr className="admin-table-row">
+                <th scope="col-md-12" className="admin-table-head">ORGANIZATION NAME</th>
+                <th scope="col-md-12" className="admin-table-head">PUBLISHED</th>
+                <th scope="col-md-12" className="admin-table-head">ACTION</th>
+              </tr>
+            </thead>
+            { this.state.organizations.map(organization => (
+              <tbody>
+                <tr>
+                  <td>{organization.name}</td>
+                  <td>Yes</td>
+                  <td>
+                    <a href="#" onClick={()=>this.props.currentOrganizationAction(organization)}>show</a>|
+                    <a href="#" onClick={()=>this.props.editOrganizationAction(organization)}>edit</a>|
+                    <a href="#" onClick={()=>this.deleteOrganization(organization)}>remove</a>
+                  </td>
+                </tr>
+              </tbody>
+            )) }
+          </table>
         </div>
       )
     }
@@ -74,7 +103,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    currentOrganizationAction: (organization) => { dispatch(actions.openCurrentOrganization(organization))}
+    currentOrganizationAction: (organization) => { dispatch(actions.openCurrentOrganization(organization))},
+    editOrganizationAction: (organization) => { dispatch(actions.editOrganization(organization))}
   }
 };
 

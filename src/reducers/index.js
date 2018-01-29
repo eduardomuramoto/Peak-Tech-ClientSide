@@ -20,7 +20,9 @@ const initialState = {
   adminTechnologiesOpen: false,
   currentOrganizationOpen: false,
   currentOrganizationInfo: {},
-  postSignUpMessage: false
+  postSignUpMessage: false,
+  editOrganizationInfo: {},
+  editOrganizationOpen: false
 }
 const stateOpen = {
   directoryOpen: false,
@@ -38,6 +40,8 @@ const stateOpen = {
   adminTechnologiesOpen: false,
   currentOrganizationOpen: false,
   postSignUpMessage: false,
+  editOrganizationOpen: false,
+  editOrganizationInfo: {}
 }
 
 export default function formStore(state = initialState, action) {
@@ -89,6 +93,9 @@ export default function formStore(state = initialState, action) {
     }
     case actionTypes.SIGN_UP: {
       return Object.assign({}, state, Object.assign({}, stateOpen, {signUpOpen: false, signInOpen: true, postSignUpMessage: true}));
+    }
+    case actionTypes.EDIT_ORGANIZATION: {
+      return Object.assign({}, state, { editOrganizationInfo: action.payload, editOrganizationOpen: true, currentOrganizationInfo: {}, currentOrganizationOpen: false, adminUsersOpen: false, adminTechnologiesOpen: false, adminNewsOpen: false, adminEventsOpen: false, newsOpen: false, directoryOpen: false, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false });
     }
     default:
       return state;

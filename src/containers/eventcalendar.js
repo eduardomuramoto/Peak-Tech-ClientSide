@@ -11,7 +11,6 @@ BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
 
 require('style-loader!css-loader!react-big-calendar/lib/css/react-big-calendar.css');
 
-console.log(events);
 class EventCalendar extends React.Component {
   render() {
     return (
