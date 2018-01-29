@@ -58,28 +58,36 @@ class AdminTechStacks extends React.Component {
   render() {
     return (
       <div className={this.props.adminTechnologiesOpen ? "admintechnologies-open" : "admintechnologies-closed"}>
+        <h2>Technologies</h2>
         <form>
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" className="form-control input_name" name="name" onChange={this.handleChange.bind(this)} value={this.state.newTechStack.name}  placeholder="Name"></input>
+              <label htmlFor="name">Name</label>
+              <input type="text" className="form-control input_name" name="name" onChange={this.handleChange.bind(this)} value={this.state.newTechStack.name}></input>
             </div>
           </div>
           <div className="form-group row">
             <div className="col-sm-12 button-column">
-              <button type="button" className="form-submit" onClick={()=>this.handleSubmit(this.state.newTechStack)}>SUBMIT</button>
+              <button type="button" className="form-submit" onClick={()=>this.handleSubmit(this.state.newTechStack)}>Add</button>
             </div>
           </div>
         </form>
+        <p>List of Technologies to be used with organizations</p>
         <table>
+          <thead>
+            <tr>
+              <th>Tech Stack</th>
+              <th>Action</th>
+            </tr>
+          </thead>
           <tbody>
-            <tr><th>Tech Stack</th><th>Action</th></tr>
             { this.state.allTechStacks.map(stack => (
             <tr key={stack.id}>
               <td>{stack.name}</td>
               <td>
                 <button
                   onClick={()=>this.deleteTechStack(stack.id)}
-                  >Delete
+                  >remove
                 </button>
               </td>
             </tr>
