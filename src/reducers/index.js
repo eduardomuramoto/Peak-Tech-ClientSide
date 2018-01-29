@@ -70,7 +70,7 @@ export default function formStore(state = initialState, action) {
       return Object.assign({}, state, Object.assign({}, stateOpen, {aboutOpen: true}));
     }
     case actionTypes.OPEN_REGISTRATION: {
-      return Object.assign({}, state, localStorage.getItem('jwt')?Object.assign({}, stateOpen, {registrationOpen: true}):initialState);
+      return Object.assign({}, state, localStorage.getItem('jwt')?Object.assign({}, stateOpen, {registrationOpen: true}):{signInOpen:true}));
     }
     case actionTypes.CREATE_TOKEN: {
       return Object.assign({}, state, { admin: action.payload, currentOrganizationOpen: false, newsOpen: false, directoryOpen: true, eventsOpen: false, signInOpen: false, signUpOpen: false, aboutOpen: false, registrationOpen: false, loggedIn: action.payload });
