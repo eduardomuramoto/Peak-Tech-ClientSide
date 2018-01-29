@@ -4,7 +4,8 @@ import actions from '../actions/index';
 import moment from 'moment';
 
 import BigCalendar from 'react-big-calendar';
-import events from '../data/events';
+import {Event} from '../requests/events'
+// import events from '../data/events';
 
 BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
 // BigCalendar.momentLocalizer(moment)
@@ -12,7 +13,30 @@ BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
 require('style-loader!css-loader!react-big-calendar/lib/css/react-big-calendar.css');
 
 class EventCalendar extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      events: []
+    }
+  }
+
+  componentDidMount() {
+    Event
+      .all()
+      .then(res => (
+        this.setState({
+          events: res
+        })
+      ))
+  }
+
+  // function popUp() {
+  //
+  // }
+
   render() {
+    console.log(this.state)
     return (
       <div className="container">
         <BigCalendar
@@ -21,7 +45,7 @@ class EventCalendar extends React.Component {
             minWidth:"600px"
           }}
           views ={['month']}
-          events={events}
+          events={this.state.events}
         />
       </div>
     )
