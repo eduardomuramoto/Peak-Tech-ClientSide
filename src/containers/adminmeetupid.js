@@ -1,88 +1,110 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import actions from '../actions/index';
-import MeetUpId from '../requests/meetup_ids';
+import {MeetUp} from '../requests/meetup_ids';
 
-class AdminMeetUpId extends React.Component {
+class AdminMeetUp extends React.Component {
   constructor () {
     super();
 
     this.state = {
-      meet_up: {
+      newId: {
         name: ""
-      }
+      },
+      allIds: []
     };
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleSubmit(){
-    MeetUpId
-      .create({name: this.state.meet_up})
-      // console.log({name: this.state.meet_up})
+  componentDidMount() {
+    MeetUp
+      .all()
+      .then (res => (
+        this.setState({
+          newId: {
+            name: ""
+          },
+          allIds: res
+        })
+      ))
   }
 
-  deleteMeetUp(id){
-    MeetUpId
-      .destroy(id)
+  handleSubmit(newMeetUpID){
+    const newIds = this.state.allIds.slice(0);
+    MeetUp
+      .create(newMeetUpID)
+      .then(res => {newIds.push({id: res.id, name: res.name})
+        this.setState(Object.assign({}, this.state, {allIds: newIds}));
+    })
   }
 
   handleChange(event) {
     const newState = Object.assign({}, this.state, {
-      [event.target.name]: event.target.value,
+      newId: {name: event.target.value}
     });
     this.setState(newState);
   }
 
-  render() {
-    // const terms = Mee.all();
+  deleteId(groupId) {
+    const filteredIds = this.state.allIds.filter(group => group.id !== groupId)
+    const newState = Object.assign({}, this.state.allIds, {
+      allIds: filteredIds
+    });
+    this.setState(newState);
+    MeetUp
+      .destroy(groupId)
+  }
 
+  render() {
     return (
       <div className={this.props.adminEventsOpen ? "adminevents-open" : "adminevents-closed"}>
         <div className="container">
-          <form className='admin-form'>
-
+          <form className="admin-form">
             <h4 className="admin-title-header">EVENTS</h4>
             <div className="form-group row">
               <div className="col-sm-3 add-tag">
-                <p>MEETUP ID</p>
+                <p>NAME</p>
               </div>
               <div className="col-sm-7">
-                <input type="text" className="form-control input_name" name="name" onInput={this.handleChange.bind(this)} value={this.state.name}  placeholder="NAME"/>
+                <input type="text" className="form-control input_name" name="name" onChange={this.handleChange.bind(this)} value={this.state.newId.name}></input>
               </div>
               <div className="col-sm-2 button-column">
-                <button type="button" className="form-submit" onClick={()=>this.handleSubmit()}>ADD</button>
+                <button type="button" className="form-submit" onClick={()=>this.handleSubmit(this.state.newId)}>ADD</button>
               </div>
             </div>
 
-            <div className="container-fluid">
-              <div className="row">
 
-              <table className="table table-bordered">
-                <thead>
-                  <tr className="admin-table-row">
-                    <th scope="col-md-12" className="admin-table-head">MEETUP ID</th>
-                    <th scope="col-md-12" className="admin-table-head">ACTION</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row" className="admin-data">Vancouver Tech</th>
-                    <td className="admin-data-remove">remove</td>
 
-                  </tr>
-                  <tr>
-                    <th scope="row" className="admin-data">vancouver-ruby</th>
-                    <td className="admin-data-remove">remove</td>
 
-                  </tr>
+        <div className="container-fluid">
+        <div className="row">
+        <table className="table table-bordered">
+          <thead>
+            <tr className="admin-table-row">
+              <th scope="col-md-12" className="admin-table-head">MEETUP ID</th>
+              <th scope="col-md-12" className="admin-table-head">ACTION</th>
+            </tr>
+          </thead>
+          <tbody>
 
-                </tbody>
-              </table>
-            </div>
+            { this.state.allIds.map(group => (
+            <tr key={group.id}>
+              <th scope="row" className="admin-data">{group.name}</th>
+              <td className="admin-data-remove">
+                <button
+                  onClick={()=>this.deleteId(group.id)}
+                  >REMOVE
+                </button>
+              </td>
+            </tr>
+            )) }
+          </tbody>
+        </table>
           </div>
-
-          </form>
         </div>
+      </form>
       </div>
+    </div>
     )
   }
 };
@@ -101,22 +123,4 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(AdminMeetUpId);
-
-
-
-{/* <table>
-  <tr><th>Meetup ID</th><th>Action</th></tr>
-  { terms.map(term => (
-    <tr>
-      <td>{term.name}</td>
-      <td>
-        <button
-            onClick={this.deleteMeetUp(term.id)}
-          >Delete
-        </button>
-      </td>
-    </tr>
-    ))
-  }
-</table> */}
+export default connect(mapStateToProps, mapDispatchToProps)(AdminMeetUp);
