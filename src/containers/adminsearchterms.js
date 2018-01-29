@@ -78,7 +78,7 @@ class AdminSearchTerms extends React.Component {
             <tr><th>Search Term</th><th>Action</th></tr>
           </thead>
           <tbody>
-            { this.state.allSearchTerms.map(term => (
+            { this.state.allSearchTerms && this.state.allSearchTerms.map(term => (
               <tr key={term.id}>
                 <td>{term.title}</td>
                 <td>

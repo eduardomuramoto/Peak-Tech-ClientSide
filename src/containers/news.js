@@ -21,7 +21,7 @@ class News extends React.Component {
 
       <div className={this.props.newsOpen ? "news-open" : "news-closed"}>
         <div className="container">
-          
+
         {
           this.props.news && this.props.news.map(news => (
             <div key={news.id} className="row news-row">
@@ -31,7 +31,6 @@ class News extends React.Component {
                 <a href="#">{news.title}</a>
                 <p className="snippet"><a href="#">Read More...</a></p>
               </div>
-              <div id="wrap"><img src=""/></div>
 
             </div>
           ))

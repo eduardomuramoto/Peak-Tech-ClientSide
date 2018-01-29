@@ -15,7 +15,7 @@ export const SearchTerm = {
         }
       }
     )
-      .then(res => res.json())
+      .then(res => res && res.json())
   },
   get (id) {
     return fetch(
@@ -26,7 +26,7 @@ export const SearchTerm = {
         }
       }
     )
-      .then(res => res.json())
+      .then(res => res && res.json())
   },
   create (params) {
     return fetch(
@@ -40,7 +40,7 @@ export const SearchTerm = {
         body: JSON.stringify(params)
       }
     )
-    .then(res => res.json());
+    .then(res => res && res.json());
   },
   destroy (id) {
     return fetch(
@@ -52,6 +52,6 @@ export const SearchTerm = {
         }
       }
     )
-      .then(res => res.json())
+      .then(res => res && res.json())
   }
 }
