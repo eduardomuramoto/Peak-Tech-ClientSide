@@ -66,6 +66,7 @@ const stateOpen = {
   currentOrganizationOpen: false,
   postSignUpMessage: false,
   editOrganizationOpen: false,
+  admin: localStorage.getItem('jwt')?jwtDecode(localStorage.getItem('jwt')).is_admin : false,
   editOrganizationInfo: {}
 }
 
