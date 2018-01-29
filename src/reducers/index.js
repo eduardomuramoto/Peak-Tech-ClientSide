@@ -90,6 +90,9 @@ export default function formStore(state = initialState, action) {
     case actionTypes.SIGN_UP: {
       return Object.assign({}, state, Object.assign({}, stateOpen, {signUpOpen: false, signInOpen: true, postSignUpMessage: true}));
     }
+    case actionTypes.REDIRECT_CREATE_ORGANIZATION: {
+      return Object.assign({}, state, Object.assign({}, stateOpen, {directoryOpen:true}));
+    }
     default:
       return state;
   }
