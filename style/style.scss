@@ -5,6 +5,10 @@
   width: auto;
 }
 
+.container{
+  margin-bottom: 10%;
+}
+
 
 #navigation{
   border-style: solid;
@@ -383,6 +387,8 @@ input[type=text]:focus, input[type="number"]:focus, input[type="password"]:focus
   background-color: rgba(45,160,190, 1);
   height: 50px;
   padding-top: 15px;
+  margin-top: 40px;
+
 }
 
 .copyright-column, .author-column{
@@ -418,6 +424,8 @@ input[type=text]:focus, input[type="number"]:focus, input[type="password"]:focus
 
 // ***** Start of admin content *****
 
+
+
 .adminnews-open {
 
 }
@@ -431,6 +439,10 @@ input[type=text]:focus, input[type="number"]:focus, input[type="password"]:focus
 
 
 
+div > form > div.container-fluid > div > table > tbody > tr:last-child{
+  padding-bottom: 80px;
+}
+
 
 
 .registration-closed {
@@ -440,6 +452,11 @@ input[type=text]:focus, input[type="number"]:focus, input[type="password"]:focus
 .admintechnologies-open {
 
 }
+
+.admintechnologies-open{
+
+}
+
 
 .admintechnologies-closed {
   display: none;
