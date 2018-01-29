@@ -123,6 +123,7 @@ class Directory extends React.Component {
   }
 };
 
+
 const mapStateToProps = (state) => {
   return {
     directoryOpen: state.directoryOpen,
