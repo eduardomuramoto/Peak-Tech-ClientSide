@@ -118,8 +118,7 @@
 
 
 .directory-open {
-  margin-top: 10vh;
-  height: 85vh;
+  height: 70vh;
 
   .MapContainer{
     height: 50vw;
@@ -127,8 +126,8 @@
   }
 
   .searchbar{
-    padding-top: 55vh;
-    margin: 0px;
+    margin-top: -70px;
+    margin-bottom: 50px;
     width: 100%;
     margin-right: auto;
     margin-left: auto;
@@ -138,6 +137,17 @@
   form{
     margin: 0;
   }
+
+  .directory-item{
+    border-style: solid;
+    border-width: thin;
+    border-color: rgba(25,150,170,1);
+    padding: 5px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+  }
+
 }
 
 .directory-closed {
@@ -476,7 +486,7 @@ div > form > div.container-fluid > div > table > tbody > tr:last-child{
 
 .adminevents-open, .adminusers-open, .admintechnologies-open, .adminnews-open, .directory-open{
   .main-container{
-    margin-bottom: 60px;
+    margin-bottom: 70px;
   }
 }
 
@@ -563,11 +573,6 @@ div > form > div.container-fluid > div > table > tbody > tr:last-child{
 }
 
 
-#organization-list {
-  margin-top: 30px;
-  margin: 20px;
-  padding: 20px;
-}
 
 .currentorganization-open {
   .container-main{
@@ -582,7 +587,7 @@ div > form > div.container-fluid > div > table > tbody > tr:last-child{
     border-width: thin;
     border-color: rgba(25,150,170,0.2);
     padding-right: 14px;
-    padding
+
   }
 
 

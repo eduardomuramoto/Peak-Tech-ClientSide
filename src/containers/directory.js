@@ -90,7 +90,7 @@ class Directory extends React.Component {
       <div>
         <WrappedContainer/>
       </div>
-      <div id="organization-list">
+      <div id="organization-list" className="main-container">
         <div className="container">
           <form className="searchbar">
             <div className="form-group row">
@@ -110,11 +110,34 @@ class Directory extends React.Component {
         </div>
         {
           grabbedOrganizations.map(organization => (<div key={organization.id}>
-            <span>{organization.name}</span>
-            <span>Employees: {organization.employees}</span>
-            <button key={organization.id} type="button" className="btn btn-dark" onClick={() => this.props.currentOrganizationAction(organization)}>
-              Show
-            </button>
+
+            <div className="container directory-item">
+              <div className="row">
+                <div className="col-md-2">
+                  {/* empty */}
+                </div>
+                <div className="col-md-8">
+                  <div className="row">
+                  <div className="col-md-6">
+                    <button key={organization.id} type="button" className="btn btn-dark" onClick={() => this.props.currentOrganizationAction(organization)}>
+                      Show
+                    </button>
+                  </div>
+                  <div className="col-md-6">
+                    <span>{organization.name}</span>
+                    <span>Employees: {organization.employees}</span>
+
+                  </div>
+                </div>
+                </div>
+                <div className="col-md-2">
+                  {/* empty */}
+                </div>
+              </div>
+            </div>
+
+
+
           </div>))
         }
       </div>
