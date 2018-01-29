@@ -5,10 +5,11 @@ function  getJwt() {
 }
 // HTTP REQUESTS
 
-export const MeetUpId = {
+export const MeetUp = {
+
   all () {
     return fetch(
-      `${BASE_URL}/api/v1/meet_up_id`,
+      `${BASE_URL}/api/v1/meet_ups`,
       {
         headers: {
           'Authorization': getJwt()
@@ -19,7 +20,7 @@ export const MeetUpId = {
   },
   get (id) {
     return fetch(
-      `${BASE_URL}/api/v1/meet_up_id/${id}`,
+      `${BASE_URL}/api/v1/meet_ups/${id}`,
       {
         headers: {
           'Authorization': getJwt()
@@ -30,7 +31,7 @@ export const MeetUpId = {
   },
   create (params) {
     return fetch(
-      `${BASE_URL}/api/v1/meet_up_id`,
+      `${BASE_URL}/api/v1/meet_ups`,
       {
         method: 'POST',
         headers: {
@@ -44,7 +45,7 @@ export const MeetUpId = {
   },
   destroy (id) {
     return fetch(
-      `${BASE_URL}/api/v1/meet_up_id/${id}`,
+      `${BASE_URL}/api/v1/meet_ups/${id}`,
       {
         method: 'DELETE',
         headers: {
