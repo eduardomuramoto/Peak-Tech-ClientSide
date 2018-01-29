@@ -18,7 +18,7 @@
   padding-left: 10px;
   padding-right: 0;
   min-height: 60px;
-  background-color: rgba(245,245,245,0.85);
+  background-color: rgba(245,245,245,1);
   border-style: solid;
   border-top-color: rgba(255,255,255,0);
   border-right-color: rgba(255,255,255,0);
@@ -146,10 +146,13 @@
   margin-top: 12vh;
   height: 85vh;
 
+  .calendar-container{
+    padding-top: 40px;
+  }
 
   .rbc-toolbar{
     color: rgba(255,255,255,1);
-    background-color: rgba(25,150,170,0.5);
+    background-color: rgba(25,150,170,0.7);
     border-style: solid;
     border-width: thin;
     border-color: rgba(255,255,255,1);
@@ -189,12 +192,16 @@
   width: 100%;
   }
 
+  .news-container{
+    padding-top: 20px;
+  }
+
   div > div.row.news-row{
      border-style: solid;
      border-color: rgba(25,150,170,0.3);
      border-width: thin;
      padding: 10px;
-     margin: 20px;
+     margin-top: 20px;
    }
 
   .news-item{
@@ -373,9 +380,9 @@ input[type=text]:focus, input[type="number"]:focus, input[type="password"]:focus
 .site-info{
   display:block;
   background-color: rgba(150,150,150,1);
-  background-color: rgba(25,150,170, 0.7);
-  height: 40px;
-  padding-top: 10px;
+  background-color: rgba(45,160,190, 1);
+  height: 50px;
+  padding-top: 15px;
 }
 
 .copyright-column, .author-column{

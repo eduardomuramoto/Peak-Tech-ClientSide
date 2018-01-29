@@ -15,7 +15,7 @@ class News extends React.Component {
     return (
 
       <div className={this.props.newsOpen ? "news-open" : "news-closed"}>
-        <div className="container">
+        <div className="container news-container">
           <div className = "row news-row">
             <div className="col-sm-3 col-md-3 col-lg-3 news-item" style ={style}>
             </div>
