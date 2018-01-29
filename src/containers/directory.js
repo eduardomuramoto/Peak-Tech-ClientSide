@@ -108,15 +108,18 @@ class Directory extends React.Component {
           </form>
 
         </div>
+        <div className="organization-list-div">
         {
-          grabbedOrganizations.map(organization => (<div key={organization.id}>
-            <span>{organization.name}</span>
-            <span>Employees: {organization.employees}</span>
-            <button key={organization.id} type="button" className="btn btn-dark" onClick={() => this.props.currentOrganizationAction(organization)}>
-              Show
-            </button>
+          grabbedOrganizations.map(organization => (
+            <div className="organization-list-item" key={organization.id}>
+              <div><h3>{organization.name}</h3></div>
+              <div>Overview: {organization.overview}</div>
+            <button key={organization.id} type="button" className="btn btn-dark organization-item-button" onClick={() => this.props.currentOrganizationAction(organization)}>
+                Show
+              </button>
           </div>))
         }
+        </div>
       </div>
 
     </div>)

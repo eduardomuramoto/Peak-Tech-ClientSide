@@ -124,10 +124,11 @@
   .MapContainer{
     height: 50vw;
     position: relative !important;
+    margin-left: 30px;
+    margin-right: 30px;
   }
 
   .searchbar{
-    padding-top: 55vh;
     margin: 0px;
     width: 100%;
     margin-right: auto;
@@ -564,7 +565,6 @@ div > form > div.container-fluid > div > table > tbody > tr:last-child{
 
 
 #organization-list {
-  margin-top: 30px;
   margin: 20px;
   padding: 20px;
 }
@@ -597,6 +597,29 @@ div > form > div.container-fluid > div > table > tbody > tr:last-child{
 
 .editorganization-closed {
   display: none;
+}
+
+.organization-list-div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 60px;
+
+  .organization-list-item {
+    padding: 10px;
+    border: thin black solid;
+    border-radius: 5px;
+    margin: 10px;
+
+    button {
+      margin-top: 10px;
+      width: 100px !important;
+      float: right !important;
+    }
+  }
+
+
 }
 
 

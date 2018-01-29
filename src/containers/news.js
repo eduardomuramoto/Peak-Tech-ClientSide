@@ -10,9 +10,8 @@ class News extends React.Component {
   }
 
   render() {
-    console.log('check me out! me!', this.props.news);
     const style = {
-      backgroundImage: "url(http://www.vancouvereconomic.com/wp-content/uploads/2016/09/stock-photo-blue-night-1081103751-970x498.jpg)",
+      // backgroundImage: "url(http://www.vancouvereconomic.com/wp-content/uploads/2016/09/stock-photo-blue-night-1081103751-970x498.jpg)",
       width: "10vw",
       backgroundSize: "cover"
     }
@@ -25,8 +24,6 @@ class News extends React.Component {
         {
           this.props.news && this.props.news.map(news => (
             <div key={news.id} className="row news-row">
-              <div className="col-sm-3 col-md-3 col-lg-3 news-item" style ={style}>
-              </div>
               <div className="col-sm-9 col-md-9 col-lg-9">
                 <a >{news.title}</a>
                 <p className="snippet"><a href={news.url}>Read More...</a></p>
