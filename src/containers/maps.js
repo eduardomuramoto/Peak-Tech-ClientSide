@@ -56,16 +56,7 @@ class MapContainer extends Component {
 
         </Map>
 
-            <div className="container">
-          <form className="searchbar">
-            <div className="form-group row">
-              <div className="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                <input type="text" className="form-control" placeholder="Search..."/>
-              </div>
-            </div>
-          </form>
 
-      </div>
       </div>
 
       );

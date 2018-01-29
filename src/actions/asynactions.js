@@ -4,6 +4,7 @@ import actionTypes from './actionTypes';
 
 const asyncActions = {
   fetchOrganizations: () => {
+    console.log('hihi hoho');
     return (dispatch) => {
       return Organization
         .all()
