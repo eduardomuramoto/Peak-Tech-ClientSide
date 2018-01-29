@@ -445,7 +445,7 @@ input[type=text]:focus, input[type="number"]:focus, input[type="password"]:focus
   display: none;
 }
 
-.adminevents-open, .adminusers-open, .admintechnologies-open{
+.adminevents-open, .adminusers-open, .admintechnologies-open, .adminnews-open{
 
   .admin-table-head{
     background-color: rgba(25,150,170, 0.3);
@@ -505,6 +505,11 @@ input[type=text]:focus, input[type="number"]:focus, input[type="password"]:focus
   th, td{
     color: rgba(127,127,127,1);
     text-align: center;
+  }
+
+  .admin-snippet{
+    color: rgba(25,150,170,1);
+    font-size: 12px;
   }
 
 }

@@ -58,41 +58,54 @@ class AdminSearchTerms extends React.Component {
   render() {
     return (
       <div className={this.props.adminNewsOpen ? "adminnews-open" : "adminnews-closed"}>
-        <h2>News</h2>
-        <form>
+        <div className="container">
+        <form className="admin-form">
+          <h4 className="admin-title-header">NEWS</h4>
           <div className="form-group row">
-            <div className="col-sm-12">
-              <label htmlFor="title">Search Terms</label>
+            <div className="col-sm-3 add-tag">
+              <p>SEARCH TERM</p>
+            </div>
+            <div className="col-sm-7">
               <input type="text" className="form-control input_title" name="title" onChange={this.handleChange.bind(this)} value={this.state.newSearchTerm.title}></input>
             </div>
-          </div>
-          <div className="form-group row">
-            <div className="col-sm-12 button-column">
-              <button type="button" className="form-submit" onClick={()=>this.handleSubmit(this.state.newSearchTerm)}>Add</button>
+            <div className="col-sm-2 button-column">
+              <button type="button" className="form-submit" onClick={()=>this.handleSubmit(this.state.newSearchTerm)}>ADD</button>
             </div>
           </div>
+
+          <div className="admin-snippet">
+            <p>LIST OF GOOGLE NEWS SEARCH TERMS TO BE FETCHED DAILY</p>
+          </div>
+
+          <div className="container-fluid">
+            <div className="row">
+            <table className="table table-bordered">
+              <thead>
+                <tr className="admin-table-row">
+                  <th scope="col-md-12" className="admin-table-head">SEARCH TERM</th>
+                  <th scope="col-md-12" className="admin-table-head">ACTION</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                { this.state.allSearchTerms.map(term => (
+                  <tr key={term.id}>
+                    <th scope="row" className="admin-data">{term.title}</th>
+                    <td className="admin-data-remove">
+                      <button
+                        onClick={()=>this.deleteSearchTerm(term.id)}
+                        >REMOVE
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
         </form>
-        <p>List of Google News search terms to be fetched daily</p>
-        <table>
-          <thead>
-            <tr><th>Search Term</th><th>Action</th></tr>
-          </thead>
-          <tbody>
-            { this.state.allSearchTerms && this.state.allSearchTerms.map(term => (
-              <tr key={term.id}>
-                <td>{term.title}</td>
-                <td>
-                  <button
-                    onClick={()=>this.deleteSearchTerm(term.id)}
-                    >remove
-                  </button>
-                </td>
-              </tr>
-            ))
-          }
-          </tbody>
-        </table>
       </div>
+    </div>
     )
   }
 };
