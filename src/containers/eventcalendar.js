@@ -38,7 +38,7 @@ class EventCalendar extends React.Component {
   render() {
     console.log(this.state)
     return (
-      <div className="container">
+      <div className="container calendar-container">
         <BigCalendar
           style={{
             height: '420px',
