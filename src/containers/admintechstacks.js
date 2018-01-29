@@ -61,12 +61,12 @@ class AdminTechStacks extends React.Component {
         <form>
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" className="form-control" id="input_name" name="name" onChange={this.handleChange.bind(this)} value={this.state.newTechStack.name}  placeholder="Name"></input>
+              <input type="text" className="form-control input_name" name="name" onChange={this.handleChange.bind(this)} value={this.state.newTechStack.name}  placeholder="Name"></input>
             </div>
           </div>
           <div className="form-group row">
             <div className="col-sm-12 button-column">
-              <button type="button" id="form-submit" onClick={()=>this.handleSubmit(this.state.newTechStack)}>SUBMIT</button>
+              <button type="button" className="form-submit" onClick={()=>this.handleSubmit(this.state.newTechStack)}>SUBMIT</button>
             </div>
           </div>
         </form>

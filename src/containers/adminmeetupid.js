@@ -37,20 +37,51 @@ class AdminMeetUpId extends React.Component {
 
     return (
       <div className={this.props.adminEventsOpen ? "adminevents-open" : "adminevents-closed"}>
-        <form>
-          <div className="form-group row">
-            <div className="col-sm-12">
-              <input type="text" className="form-control" id="input_name" name="name" onInput={this.handleChange.bind(this)} value={this.state.name}  placeholder="Name"/>
+        <div className="container">
+          <form className='admin-form'>
+
+            <h4 className="admin-title-header">EVENTS</h4>
+            <div className="form-group row">
+              <div className="col-sm-3 add-tag">
+                <p>MEETUP ID</p>
+              </div>
+              <div className="col-sm-7">
+                <input type="text" className="form-control input_name" name="name" onInput={this.handleChange.bind(this)} value={this.state.name}  placeholder="NAME"/>
+              </div>
+              <div className="col-sm-2 button-column">
+                <button type="button" className="form-submit" onClick={()=>this.handleSubmit()}>ADD</button>
+              </div>
+            </div>
+
+            <div className="container-fluid">
+              <div className="row">
+
+              <table className="table table-bordered">
+                <thead>
+                  <tr className="admin-table-row">
+                    <th scope="col-md-12" className="admin-table-head">MEETUP ID</th>
+                    <th scope="col-md-12" className="admin-table-head">ACTION</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row" className="admin-data">Vancouver Tech</th>
+                    <td className="admin-data-remove">remove</td>
+
+                  </tr>
+                  <tr>
+                    <th scope="row" className="admin-data">vancouver-ruby</th>
+                    <td className="admin-data-remove">remove</td>
+
+                  </tr>
+
+                </tbody>
+              </table>
             </div>
           </div>
 
-          <div className="form-group row">
-            <div className="col-sm-12 button-column">
-              <button type="button" id="form-submit" onClick={()=>this.handleSubmit()}>SUBMIT</button>
-            </div>
-          </div>
-        </form>
-
+          </form>
+        </div>
       </div>
     )
   }

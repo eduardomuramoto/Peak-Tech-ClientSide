@@ -285,7 +285,7 @@ input[type=text]:focus, input[type="number"]:focus, input[type="password"]:focus
   outline: 0;
 }
 
-#form-submit{
+.form-submit{
   background-color: rgba(25,150,170,0.8);
   color: rgba(255,255,255,0.7);
   border-color: rgba(0,0,0,0);
@@ -297,7 +297,7 @@ input[type=text]:focus, input[type="number"]:focus, input[type="password"]:focus
 }
 
 
-#form-submit:hover{
+.form-submit:hover{
   background-color: rgba(25,150,170,1);
   color: rgba(255,255,255,1);
   margin-left: auto;
@@ -307,21 +307,21 @@ input[type=text]:focus, input[type="number"]:focus, input[type="password"]:focus
   box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
 }
 
-#form-submit:focus{
+.form-submit:focus{
   outline: 0;
   border-color: rgba(0,0,0,0);
   background-color: rgba(25,150,170,0.8);
   color: rgba(255,255,255,1);
 }
 
-#form-submit:active{
+.form-submit:active{
   outline: 0;
   background-color: rgba(255,255,255,1);
   color: rgba(25,150,170,1);
 
 }
 
-#form-submit:visited{
+.form-submit:visited{
   outline: 0;
   color: rgba(255,255,255,1);
   background-color: rgba(25,150,170,1);
@@ -388,6 +388,137 @@ input[type=text]:focus, input[type="number"]:focus, input[type="password"]:focus
 
 // ***** End of Footer *****
 
+
+
+// ***** Start of admin content *****
+
+.adminnews-open {
+
+}
+
+.adminnews-closed {
+  display: none;
+}
+.registration-open {
+
+}
+
+
+
+
+
+.registration-closed {
+  display: none;
+}
+
+.admintechnologies-open {
+
+}
+
+.admintechnologies-closed {
+  display: none;
+}
+
+.adminevents-open, .adminusers-open{
+
+  .admin-table-head{
+    background-color: rgba(25,150,170, 0.3);
+  }
+
+  .admin-table-row, .admin-data, .admin-data-remove{
+    background-color: rgba(25,150,170, 0.1);
+  }
+
+  input[type="text"]{
+    background-color: rgba(25,150,170,0.1);
+    color: rgba(25,150,170,1);
+    border-color: rgba(25,150,170,0);
+    border-radius: 0;
+  }
+
+  button{
+    background-color: rgba(25,150,170,1);
+    border-style: none;
+    height: 33px;
+    color: rgba(255,255,255,1);
+    padding-top: 2px;
+    padding-right: 5px;
+    padding-left: 5px;
+    width: 100%;
+
+  }
+
+  .add-tag{
+    background-color: rgba(245,245,245,1);
+    border-style: none;
+    height: 37px;
+    padding-top: 8px;
+    vertical-align: middle;
+    color: rgba(25,150,170,1);
+    font-size: 14px;
+  }
+
+  .admin-form{
+    padding-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+  }
+
+  .admin-title-header{
+    text-align: center;
+    padding-bottom: 40px;
+    color: rgba(25,150,170,1);
+  }
+
+  .form-group{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  th, td{
+    color: rgba(127,127,127,1);
+    text-align: center;
+  }
+
+}
+
+.adminevents-closed {
+  display: none;
+}
+
+.adminusers-open {
+
+}
+
+.adminusers-closed {
+  display: none;
+}
+
+
+#organization-list {
+  margin-top: 30px;
+  margin: 20px;
+  padding: 20px;
+}
+
+.currentorganization-open {
+
+}
+
+.currentorganization-closed {
+  display: none;
+}
+
+
+// ***** End of admin content *****
+
+
+
+
+
+
+
 // ***** Start of media queries *****
 
 
@@ -423,82 +554,30 @@ input[type=text]:focus, input[type="number"]:focus, input[type="password"]:focus
 }
 
 @media only screen and (min-width: 768px) {
-  form{
+  .sign-form{
     max-width: 450px;
     min-width: 450px;
   }
 }
 
 @media only screen and (min-width: 1200px) {
-  form{
+  .sign-form{
     max-width: 475px;
   }
 }
 
 @media only screen and (min-width: 1400px) {
-  form{
+  .sign-form{
     max-width: 500px;
   }
 }
 
 @media only screen and (min-width: 1600px) {
-  form{
+  .sign-form{
     max-width: 550px;
   }
 }
 
 
-.adminnews-open {
 
-}
-
-.adminnews-closed {
-  display: none;
-}
 // ***** End of media queries *****
-
-.registration-open {
-
-}
-
-.registration-closed {
-  display: none;
-}
-
-.admintechnologies-open {
-
-}
-
-.admintechnologies-closed {
-  display: none;
-}
-
-.adminevents-open {
-
-}
-
-.adminevents-closed {
-  display: none;
-}
-
-.adminusers-open {
-
-}
-
-.adminusers-closed {
-  display: none;
-}
-
-
-#organization-list {
-  margin: 20px;
-  padding: 20px;
-}
-
-.currentorganization-open {
-
-}
-
-.currentorganization-closed {
-  display: none;
-}

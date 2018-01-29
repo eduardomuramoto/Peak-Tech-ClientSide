@@ -7,40 +7,43 @@ class AdminUsers extends React.Component {
     return (
       <div className={this.props.adminUsersOpen ? "adminusers-open" : "adminusers-closed"}>
         <div className="container">
-          <div className="row">
-          <h3>PENDING CLAIM REQUESTS</h3>
-          <table className="table table-bordered">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-              </tr> 
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
+          <form className='admin-form'>
+
+            <h4 className="admin-title-header">PENDING CLAIM REQUESTS</h4>
+
+            <div className="container-fluid">
+              <div className="row">
+
+              <table className="table table-bordered">
+                <thead>
+                  <tr className="admin-table-row">
+                    <th scope="col-md-12" className="admin-table-head">NAME</th>
+                    <th scope="col-md-12" className="admin-table-head">EMAIL</th>
+                    <th scope="col-md-12" className="admin-table-head">ORGANIZATION</th>
+                    <th scope="col-md-12" className="admin-table-head">ACTIONS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row" className="admin-data">JOE SMITH</th>
+                    <td className="admin-data-remove">joe@wishpond.com</td>
+                    <th scope="row" className="admin-data">Wishpond</th>
+                    <td className="admin-data-remove">accept reject</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" className="admin-data">JOE SMITH</th>
+                    <td className="admin-data-remove">joe@wishpond.com</td>
+                    <th scope="row" className="admin-data">Wishpond</th>
+                    <td className="admin-data-remove">accept reject</td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          </form>
         </div>
-      </div>
     </div>
     )
   }

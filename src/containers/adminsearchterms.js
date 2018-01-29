@@ -35,13 +35,13 @@ class AdminSearchTerms extends React.Component {
         <form>
           <div className="form-group row">
             <div className="col-sm-12">
-              <input type="text" className="form-control" id="input_title" name="title" onChange={this.handleChange.bind(this)} value={this.state.title}  placeholder="Title"/>
+              <input type="text" className="form-control input_title" name="title" onChange={this.handleChange.bind(this)} value={this.state.title}  placeholder="Title"/>
             </div>
           </div>
 
           <div className="form-group row">
             <div className="col-sm-12 button-column">
-              <button type="button" id="form-submit" onClick={()=>this.handleSubmit()}>SUBMIT</button>
+              <button type="button" className="form-submit" onClick={()=>this.handleSubmit()}>SUBMIT</button>
             </div>
           </div>
         </form>
