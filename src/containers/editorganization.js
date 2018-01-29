@@ -4,17 +4,17 @@ import actions from '../actions/index';
 import {Organization} from '../requests/organizations.js';
 
 class EditOrganization extends React.Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
-      name: "",
-      address: "",
-      overview: "",
-      employees: "",
-      team_size: "",
-      website: "",
-      twitter: "",
-      logo: ""
+      name: `${props.editOrganizationInfo.name}`,
+      address: `${props.editOrganizationInfo.address}`,
+      overview: `${props.editOrganizationInfo.overview}`,
+      employees: `${props.editOrganizationInfo.employees}`,
+      team_size: `${props.editOrganizationInfo.team_size}`,
+      website: `${props.editOrganizationInfo.website}`,
+      twitter: `${props.editOrganizationInfo.twitter}`,
+      logo: `${props.editOrganizationInfo.logo}`
     }
   }
 
@@ -26,11 +26,8 @@ class EditOrganization extends React.Component {
   }
 
   handleSubmit(){
-    // Organization
-    //   .create({organization: this.state})
-    //   .then(data => {
-    //     console.log(data)
-    //   })
+    Organization
+      .update(this.props.editOrganizationInfo.id, this.state)
   }
 
   render() {

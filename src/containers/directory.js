@@ -54,7 +54,7 @@ class Directory extends React.Component {
               </tr>
             </thead>
             { this.state.organizations.map(organization => (
-              <tbody>
+              <tbody key={organization.id}>
                 <tr>
                   <td>{organization.name}</td>
                   <td>Yes</td>
