@@ -6,7 +6,7 @@ function  getJwt() {
 // HTTP REQUESTS
 
 
-export const New = {
+export const News = {
   all () {
     return fetch(
       `${BASE_URL}/api/v1/stories`,

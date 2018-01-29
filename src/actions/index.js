@@ -2,7 +2,7 @@ import actionTypes from "./actionTypes";
 import asyncActions from './asynactions';
 
 const {
-  fetchOrganizations,
+  fetchOrganizations, fetchNews,
 } = asyncActions;
 
 const actions = {
@@ -61,6 +61,7 @@ const actions = {
     return { type: actionTypes.REDIRECT_CREATE_ORGANIZATION, payload: undefined}
   },
   fetchOrganizations,
+  fetchNews,
 };
 
 export default actions;

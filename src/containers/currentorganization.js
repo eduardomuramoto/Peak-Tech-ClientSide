@@ -4,7 +4,6 @@ import actions from '../actions/index';
 
 class CurrentOrganization extends React.Component {
   render() {
-    console.log('check me', this.props.currentOrganizationInfo);
     return (
       <div className={this.props.currentOrganizationOpen ? "currentorganization-open" : "currentorganization-closed"}>
         <h1>{this.props.currentOrganizationInfo.name}</h1>
