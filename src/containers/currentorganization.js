@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import actions from '../actions/index';
-import WrappedContainer from './maps';
+import WrappedCurrentMap from './currentmap';
 
 class CurrentOrganization extends React.Component {
   render() {
@@ -29,7 +29,7 @@ class CurrentOrganization extends React.Component {
               <p>TWITTER: {this.props.currentOrganizationInfo.twitter}</p>
             </div>
             <div className="col-md-3 map-container">
-              <WrappedContainer/>
+              <WrappedCurrentMap/>
             </div>
           </div>
 
