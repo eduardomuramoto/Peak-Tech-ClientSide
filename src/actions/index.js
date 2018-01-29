@@ -48,6 +48,9 @@ const actions = {
   },
   signUp: () => {
     return { type: actionTypes.SIGN_UP, payload: undefined}
+  },
+  redirectCreateOrganization: () => {
+    return { type: actionTypes.REDIRECT_CREATE_ORGANIZATION, payload: undefined}
   }
 };
 
